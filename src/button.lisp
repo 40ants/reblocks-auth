@@ -7,10 +7,10 @@
 (in-package weblocks-auth/button)
 
 
-(defgeneric render (service)
+(defgeneric render (service &key retpath)
   (:documentation "Renders a button for given service.
                    Service should be a keyword like :github or :facebook.")
-  (:method ((service t))
+  (:method ((service t) &key retpath)
     (with-html
       (:a :href ""
           :class "button"

@@ -1,6 +1,7 @@
 (defpackage #:weblocks-auth/github
   (:use #:cl)
   (:import-from #:dexador)
+  (:import-from #:log4cl)
   (:import-from #:jonathan
                 #:to-json)
   (:import-from #:weblocks-auth/button)
@@ -12,9 +13,21 @@
   (:import-from #:weblocks-auth/models
                 #:find-social-user
                 #:create-social-user)
+  (:import-from #:weblocks/response
+                #:add-retpath-to)
+  (:import-from #:cl-strings
+                #:split)
+  (:import-from #:quri
+                #:url-encode-params)
+  (:import-from #:weblocks/request
+                #:get-uri)
   (:export
    #:*client-id*
-   #:*secret*))
+   #:*secret*
+   #:get-token
+   #:get-scopes
+   #:*default-scopes*
+   #:render-button))
 (in-package weblocks-auth/github)
 
 
@@ -26,10 +39,21 @@
   "OAuth secret")
 
 
-(defun make-authentication-url ()
-  (format nil
-          "https://github.com/login/oauth/authorize?client_id=~A&scope=write:repo_hook,read:org"
-          *client-id*))
+(defvar *default-scopes* (list "user:email"))
+
+
+(defun make-default-redirect-uri ()
+  (weblocks/response:make-uri "/login?service=github"))
+
+
+(defun make-authentication-url (&key (scopes *default-scopes*)
+                                     (redirect-uri (make-default-redirect-uri)))
+  (let ((scopes (cl-strings:join scopes :separator " ")))
+    (format nil
+            "https://github.com/login/oauth/authorize?~A"
+            (url-encode-params (list (cons "client_id" *client-id*)
+                                     (cons "scope" scopes)
+                                     (cons "redirect_uri" redirect-uri))))))
 
 
 (defun get-oauth-token-by (code)
@@ -51,16 +75,30 @@
             data)))
 
 
-(defmethod weblocks-auth/button:render ((service (eql :github)))
+(defun render-button (&key (class "button small")
+                           (scopes *default-scopes*)
+                           (text "Grant permissions")
+                           (retpath (get-uri)))
+  "Renders a button to request more scopes."
   (with-html
-    (if *client-id*
-        (:a :href (make-authentication-url)
-            :class "button"
-            "GitHub")
-        (:a :href ""
-            :class "button"
-            "Please, set weblocks-auth/github:*client-id*"))))
+    (let* ((default-redirect (make-default-redirect-uri))
+           (redirect-uri (add-retpath-to default-redirect
+                                         :retpath retpath))
+           (authentication-uri (make-authentication-url :scopes scopes
+                                                        :redirect-uri redirect-uri)))
+      (if *client-id*
+          (:a :href authentication-uri
+              :class class
+              text)
+          (:a :href ""
+              :class class
+              "Please, set weblocks-auth/github:*client-id*")))))
 
+
+(defmethod weblocks-auth/button:render ((service (eql :github))
+                                        &key retpath)
+  (render-button :text "GitHub"
+                 :retpath retpath))
 
 
 (defmethod weblocks-auth/auth:authenticate ((service (eql :github)) &rest params &key code)
@@ -69,19 +107,41 @@
   (unless code
     (error "Unable to authenticate user without the code."))
   
-  (let* ((token (get-oauth-token-by code))
-         (user-data (dex:get "https://api.github.com/user"
-                             :headers (list (cons "Authorization"
-                                                  (format nil "token ~A" token)))))
-         (parsed (jonathan:parse user-data))
-         (login (getf parsed :|login|))
-         (user (find-social-user :github login)))
+  (let* ((token (get-oauth-token-by code)))
+    (multiple-value-bind (response code headers)
+        (dex:get "https://api.github.com/user"
+                 :headers (list (cons "Authorization"
+                                      (format nil "token ~A" token))))
+      (declare (ignorable code))
+      
+      (let* ((parsed (jonathan:parse response))
+             (login (getf parsed :|login|))
+             (user (find-social-user :github login))
+             (scopes (gethash "x-oauth-scopes" headers)))
+        
+        (setf (weblocks/session:get-value
+               :github-token)
+              token)
+
+        (when scopes
+          (setf (weblocks/session:get-value
+                 :github-scopes)
+                (split scopes ", ")))
     
-    (log:info "Token" token login)
-    (cond
-      (user (values user
-                    nil))
-      (t (values (create-social-user :github
-                                     login
-                                     :email (getf parsed :|email|))
-                 t)))))
+        (cond
+          (user (values user
+                        nil))
+          (t (values (create-social-user :github
+                                         login
+                                         :email (getf parsed :|email|))
+                     t)))))))
+
+
+(defun get-token ()
+  "Returns current user's GitHub token."
+  (weblocks/session:get-value :github-token))
+
+
+(defun get-scopes ()
+  "Returns current user's scopes."
+  (weblocks/session:get-value :github-scopes))

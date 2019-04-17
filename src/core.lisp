@@ -36,8 +36,7 @@
 
 
 (defwidget login-processor ()
-  ((retpath :initform "/"
-            :accessor get-retpath))
+  ()
   (:documentation "Этот виджет мы показываем, когда обрабатываем логин
                    пользователя посредством кода из письма или нужно отрисовать форму логина."))
 
@@ -62,21 +61,23 @@
     (log:debug "Goal" goal-name "was reached")))
 
 
-(defun render-buttons ()
+(defun render-buttons (&key retpath)
   (loop for service in *enabled-services*
-        do (weblocks-auth/button:render service)))
+        do (weblocks-auth/button:render service
+                                        :retpath retpath)))
 
 
 (defmethod render ((widget login-processor))
   (let ((service (get-parameter "service"))
-        (retpath (get-parameter "retpath")))
+        (retpath (or (get-parameter "retpath")
+                     "/")))
     
-    (cond
-      (retpath
-       (setf (get-retpath widget)
-             retpath))
-      (t (setf retpath
-               (get-retpath widget))))
+    ;; (cond
+    ;;   (retpath
+    ;;    (setf (get-retpath widget)
+    ;;          retpath))
+    ;;   (t (setf retpath
+    ;;            (get-retpath widget))))
 
     (weblocks/html:with-html
       (:h1 "Login with"))
@@ -107,10 +108,12 @@
                  (with-html
                    (:p :class "label alert"
                        (get-message condition))
-                   (:p (render-buttons)))))))
+                   (:p (render-buttons :retpath retpath)))))))
 
+          ;; Here we just show the raw of available buttons
+          ;; to login via different identity providers
           (t
-           (render-buttons)))))
+           (render-buttons :retpath retpath)))))
 
 
 (defmethod render ((widget logout-processor))
