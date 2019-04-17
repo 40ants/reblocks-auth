@@ -12,10 +12,14 @@
                 #:create-dao)
   (:export #:find-social-user
            #:create-social-user
+           #:user
+           #:social-profile
            #:get-all-users
            #:get-email
            #:get-nickname
            #:get-current-user
+           #:get-user-by-email
+           #:get-user-by-nickname
            #:anonymous-p))
 (in-package weblocks-auth/models)
 
@@ -74,6 +78,7 @@
             (get-service obj)
             (get-service-user-id obj))))
 
+
 (defun get-all-users ()
   (mito:select-dao 'user))
 
@@ -121,3 +126,13 @@
 
 (defun anonymous-p (user)
   (null user))
+
+
+(defun get-user-by-email (email)
+  "Returns a user with given email."
+  (mito:find-dao 'user :email email))
+
+
+(defun get-user-by-nickname (nickname)
+  "Returns a user with given email."
+  (mito:find-dao 'user :nickname nickname))

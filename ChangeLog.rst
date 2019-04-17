@@ -2,6 +2,12 @@
  ChangeLog
 ===========
 
+0.3.0
+=====
+
+* Now classes ``user`` and ``social-profile`` are exported from ``weblocks-auth/models`` system.
+* New function were added: ``weblocks-auth/models:get-user-by-email`` and ``weblocks-auth/models:get-user-by-nickname``.
+
 0.2.0
 =====
 
