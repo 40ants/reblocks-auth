@@ -25,14 +25,20 @@
                 #:with-html)
   (:import-from #:weblocks-auth/models
                 #:get-current-user)
-  (:export #:foo
-           #:bar
+  (:export #:*login-hooks*
+           #:*enabled-services*
            #:make-login-processor
-           #:make-logout-processor))
+           #:make-logout-processor
+           #:render-buttons))
 (in-package weblocks-auth/core)
 
 
-(defvar *enabled-services* (list :github))
+(defvar *enabled-services* (list :github)
+  "Set this variable to limit a services available to login through.")
+
+
+(defvar *login-hooks* nil
+  "Append a funcallable handlers which accept single argument - logged user.")
 
 
 (defwidget login-processor ()
@@ -101,6 +107,9 @@
 
                    (setf (get-current-user)
                          user)
+
+                   (loop for hook in *login-hooks*
+                         do (funcall hook user))
 
                    (log:debug "Redirecting to" retpath)
                    (redirect retpath))

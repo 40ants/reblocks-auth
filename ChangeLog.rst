@@ -2,6 +2,13 @@
  ChangeLog
 ===========
 
+0.4.0
+=====
+
+* Added a new variable ``weblocks-auth/core:*login-hooks*``.
+* A variable ``weblocks-auth/core:*enabled-services*`` was exported.
+* A function ``weblocks-auth/core:render-buttons`` was exported.
+
 0.3.0
 =====
 
