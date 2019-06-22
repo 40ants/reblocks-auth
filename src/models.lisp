@@ -20,6 +20,7 @@
            #:get-current-user
            #:get-user-by-email
            #:get-user-by-nickname
+           #:change-email
            #:anonymous-p))
 (in-package weblocks-auth/models)
 
@@ -136,3 +137,16 @@
 (defun get-user-by-nickname (nickname)
   "Returns a user with given email."
   (mito:find-dao 'user :nickname nickname))
+
+
+(defun change-email (user email)
+  (check-type user user)
+  (check-type email (or string null))
+
+  ;; TODO: Add a check that no other users has same email
+  ;; and raise appropriate error
+  ;; TODO: Send a verification email to a new address
+  ;; and mark email as validated after the click to the link
+  (setf (slot-value user 'email)
+        email)
+  (mito:save-dao user))

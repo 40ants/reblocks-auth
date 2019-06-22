@@ -2,6 +2,11 @@
  ChangeLog
 ===========
 
+0.5.0
+=====
+
+* Added a ``weblocks-auth/models:change-email`` function.
+
 0.4.0
 =====
 
