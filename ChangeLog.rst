@@ -2,6 +2,11 @@
  ChangeLog
 ===========
 
+0.5.1
+=====
+
+* Supported recent change `of mito <https://github.com/fukamachi/mito/commit/be0ea57df921aa1beb2045b50a8c2e2e4f8b8955>`_ caused an error when searching a social user.
+
 0.5.0
 =====
 

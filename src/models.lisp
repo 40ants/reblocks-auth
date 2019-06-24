@@ -85,10 +85,9 @@
 
 
 (defun find-social-user (service service-user-id)
+  (check-type service keyword)
   (let* ((profile (mito:find-dao 'social-profile
-                                 :service (etypecase service
-                                            (symbol (symbol-name service))
-                                            (string service))
+                                 :service service
                                  :service-user-id service-user-id)))
     (when profile
       (get-user profile))))
