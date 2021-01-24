@@ -21,6 +21,8 @@
                 #:url-encode-params)
   (:import-from #:weblocks/request
                 #:get-uri)
+  (:import-from #:secret-values
+                #:ensure-value-revealed)
   (:export
    #:*client-id*
    #:*secret*
@@ -36,7 +38,7 @@
 
 
 (defvar *secret* nil
-  "OAuth secret")
+  "OAuth secret. It might be a string or secret-values:secret-value.")
 
 
 (defvar *default-scopes* (list "user:email"))
@@ -60,7 +62,8 @@
   (let* ((response (dex:post "https://github.com/login/oauth/access_token"
                              :content (to-json (list :|code| code
                                                      :|client_id| *client-id*
-                                                     :|client_secret| *secret*))
+                                                     :|client_secret| (ensure-value-revealed
+                                                                       *secret*)))
                              :headers '(("Accept" . "application/json")
                                         ("Content-Type" . "application/json"))))
          (data (jonathan:parse response))

@@ -2,6 +2,11 @@
  ChangeLog
 ===========
 
+0.6.0
+=====
+
+* Added support for ``secret-values`` in ``weblocks-auth/github:*secret*``.
+
 0.5.1
 =====
 
