@@ -1,10 +1,10 @@
-(defpackage #:weblocks-auth/button
+(defpackage #:reblocks-auth/button
   (:use #:cl)
-  (:import-from #:weblocks/html
+  (:import-from #:reblocks/html
                 #:with-html)
   (:export
    #:render))
-(in-package weblocks-auth/button)
+(in-package reblocks-auth/button)
 
 
 (defgeneric render (service &key retpath)

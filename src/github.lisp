@@ -1,25 +1,25 @@
-(defpackage #:weblocks-auth/github
+(defpackage #:reblocks-auth/github
   (:use #:cl)
   (:import-from #:dexador)
   (:import-from #:log4cl)
   (:import-from #:jonathan
                 #:to-json)
-  (:import-from #:weblocks-auth/button)
-  (:import-from #:weblocks-auth/auth)
-  (:import-from #:weblocks/html
+  (:import-from #:reblocks-auth/button)
+  (:import-from #:reblocks-auth/auth)
+  (:import-from #:reblocks/html
                 #:with-html)
-  (:import-from #:weblocks-auth/conditions
+  (:import-from #:reblocks-auth/conditions
                 #:unable-to-authenticate)
-  (:import-from #:weblocks-auth/models
+  (:import-from #:reblocks-auth/models
                 #:find-social-user
                 #:create-social-user)
-  (:import-from #:weblocks/response
+  (:import-from #:reblocks/response
                 #:add-retpath-to)
   (:import-from #:cl-strings
                 #:split)
   (:import-from #:quri
                 #:url-encode-params)
-  (:import-from #:weblocks/request
+  (:import-from #:reblocks/request
                 #:get-uri)
   (:import-from #:secret-values
                 #:ensure-value-revealed)
@@ -30,7 +30,7 @@
    #:get-scopes
    #:*default-scopes*
    #:render-button))
-(in-package weblocks-auth/github)
+(in-package reblocks-auth/github)
 
 
 (defvar *client-id* nil
@@ -45,7 +45,7 @@
 
 
 (defun make-default-redirect-uri ()
-  (weblocks/response:make-uri "/login?service=github"))
+  (reblocks/response:make-uri "/login?service=github"))
 
 
 (defun make-authentication-url (&key (scopes *default-scopes*)
@@ -95,16 +95,16 @@
               text)
           (:a :href ""
               :class class
-              "Please, set weblocks-auth/github:*client-id*")))))
+              "Please, set reblocks-auth/github:*client-id*")))))
 
 
-(defmethod weblocks-auth/button:render ((service (eql :github))
+(defmethod reblocks-auth/button:render ((service (eql :github))
                                         &key retpath)
   (render-button :text "GitHub"
                  :retpath retpath))
 
 
-(defmethod weblocks-auth/auth:authenticate ((service (eql :github)) &rest params &key code)
+(defmethod reblocks-auth/auth:authenticate ((service (eql :github)) &rest params &key code)
   (declare (ignorable params))
   
   (unless code
@@ -122,12 +122,12 @@
              (user (find-social-user :github login))
              (scopes (gethash "x-oauth-scopes" headers)))
         
-        (setf (weblocks/session:get-value
+        (setf (reblocks/session:get-value
                :github-token)
               token)
 
         (when scopes
-          (setf (weblocks/session:get-value
+          (setf (reblocks/session:get-value
                  :github-scopes)
                 (split scopes ", ")))
     
@@ -142,9 +142,9 @@
 
 (defun get-token ()
   "Returns current user's GitHub token."
-  (weblocks/session:get-value :github-token))
+  (reblocks/session:get-value :github-token))
 
 
 (defun get-scopes ()
   "Returns current user's scopes."
-  (weblocks/session:get-value :github-scopes))
+  (reblocks/session:get-value :github-scopes))

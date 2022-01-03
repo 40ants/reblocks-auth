@@ -1,11 +1,11 @@
-(defpackage #:weblocks-auth/utils
+(defpackage #:reblocks-auth/utils
   (:use #:cl)
   (:import-from #:alexandria
                 #:make-keyword)
   (:export
    #:to-plist
    #:keywordify))
-(in-package weblocks-auth/utils)
+(in-package reblocks-auth/utils)
 
 
 (defun keywordify (string)

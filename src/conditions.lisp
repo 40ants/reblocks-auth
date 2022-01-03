@@ -1,10 +1,10 @@
-(defpackage #:weblocks-auth/conditions
+(defpackage #:reblocks-auth/conditions
   (:use #:cl)
   (:export
    #:unable-to-authenticate
    #:get-reason
    #:get-message))
-(in-package weblocks-auth/conditions)
+(in-package reblocks-auth/conditions)
 
 
 (define-condition unable-to-authenticate ()

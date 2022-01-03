@@ -1,7 +1,7 @@
-(defpackage #:weblocks-auth/models
+(defpackage #:reblocks-auth/models
   (:use #:cl)
   (:import-from #:jonathan)
-  (:import-from #:weblocks/session)
+  (:import-from #:reblocks/session)
   (:import-from #:alexandria
                 #:make-keyword)
   (:import-from #:mito
@@ -22,7 +22,7 @@
            #:get-user-by-nickname
            #:change-email
            #:anonymous-p))
-(in-package weblocks-auth/models)
+(in-package reblocks-auth/models)
 
 
 (defclass user ()
@@ -114,12 +114,12 @@
 
 
 (defun get-current-user ()
-  (weblocks/session:get-value
+  (reblocks/session:get-value
    :user))
 
 
 (defun (setf get-current-user) (user)
-  (setf (weblocks/session:get-value
+  (setf (reblocks/session:get-value
          :user)
         user))
 

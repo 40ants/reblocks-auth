@@ -1,8 +1,8 @@
-(defpackage #:weblocks-auth/auth
+(defpackage #:reblocks-auth/auth
   (:use #:cl)
   (:export
    #:authenticate))
-(in-package weblocks-auth/auth)
+(in-package reblocks-auth/auth)
 
 
 (defgeneric authenticate (service &rest params)
@@ -14,5 +14,5 @@
                    Should return two values a user and a flag denotifing if user was just created.")
   (:method ((service t) &rest params)
     (declare (ignorable params))
-    (error "Please, define weblocks-auth/auth:authenticate method for ~A service."
+    (error "Please, define reblocks-auth/auth:authenticate method for ~A service."
            service)))

@@ -1,36 +1,36 @@
-(defpackage #:weblocks-auth/core
-  (:nicknames #:weblocks-auth)
+(defpackage #:reblocks-auth/core
+  (:nicknames #:reblocks-auth)
   (:use #:cl)
   (:import-from #:log4cl)
-  (:import-from #:weblocks-auth/button)
-  (:import-from #:weblocks-auth/auth)
-  (:import-from #:weblocks/response
+  (:import-from #:reblocks-auth/button)
+  (:import-from #:reblocks-auth/auth)
+  (:import-from #:reblocks/response
                 #:redirect)
-  (:import-from #:weblocks/request
+  (:import-from #:reblocks/request
                 #:get-parameters
                 #:get-parameter)
-  (:import-from #:weblocks/widget
+  (:import-from #:reblocks/widget
                 #:widget
                 #:render
                 #:defwidget)
-  (:import-from #:weblocks/page
+  (:import-from #:reblocks/page
                 #:get-title)
-  (:import-from #:weblocks-auth/utils
+  (:import-from #:reblocks-auth/utils
                 #:keywordify
                 #:to-plist)
-  (:import-from #:weblocks-auth/conditions
+  (:import-from #:reblocks-auth/conditions
                 #:get-message
                 #:unable-to-authenticate)
-  (:import-from #:weblocks/html
+  (:import-from #:reblocks/html
                 #:with-html)
-  (:import-from #:weblocks-auth/models
+  (:import-from #:reblocks-auth/models
                 #:get-current-user)
   (:export #:*login-hooks*
            #:*enabled-services*
            #:make-login-processor
            #:make-logout-processor
            #:render-buttons))
-(in-package weblocks-auth/core)
+(in-package reblocks-auth/core)
 
 
 (defvar *enabled-services* (list :github)
@@ -61,7 +61,7 @@
 
 
 (defgeneric reach-goal (widget goal-name &key survive-redirect-p)
-  ;; TODO: move this to a separate system weblocks-metrics
+  ;; TODO: move this to a separate system reblocks-metrics
   (:method ((widget t) goal-name &key survive-redirect-p)
     (declare (ignorable widget survive-redirect-p))
     (log:debug "Goal" goal-name "was reached")))
@@ -69,7 +69,7 @@
 
 (defun render-buttons (&key retpath)
   (loop for service in *enabled-services*
-        do (weblocks-auth/button:render service
+        do (reblocks-auth/button:render service
                                         :retpath retpath)))
 
 
@@ -85,7 +85,7 @@
     ;;   (t (setf retpath
     ;;            (get-retpath widget))))
 
-    (weblocks/html:with-html
+    (reblocks/html:with-html
       (:h1 "Login with"))
 
     (cond (service
@@ -93,7 +93,7 @@
                                    :without '(:service))))
              (handler-case
                  (multiple-value-bind (user existing-p)
-                     (apply 'weblocks-auth/auth:authenticate
+                     (apply 'reblocks-auth/auth:authenticate
                             (keywordify service)
                             params)
                    (log:debug "User logged in" user)
@@ -128,5 +128,5 @@
 (defmethod render ((widget logout-processor))
   (let ((retpath (or (get-parameter "retpath")
                      "/")))
-    (weblocks/session:reset)
+    (reblocks/session:reset)
     (redirect retpath)))

@@ -1,9 +1,9 @@
-(defpackage #:weblocks-auth-test/core
+(defpackage #:reblocks-auth-test/core
   (:use #:cl
-        #:weblocks-auth/core
+        #:reblocks-auth/core
         #:rove
         #:hamcrest/rove))
-(in-package weblocks-auth-test/core)
+(in-package reblocks-auth-test/core)
 
 
 (deftest test-some-staff
