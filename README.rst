@@ -4,14 +4,14 @@
 
 .. insert-your badges like that:
 
-.. image:: https://travis-ci.org/40ants/weblocks-auth.svg?branch=master
-    :target: https://travis-ci.org/40ants/weblocks-auth
+.. image:: https://travis-ci.org/40ants/reblocks-auth.svg?branch=master
+    :target: https://travis-ci.org/40ants/reblocks-auth
 
 .. Everything starting from this commit will be inserted into the
    index page of the HTML documentation.
 .. include-from
 
-Weblocks-auth is a system for adding authentication for your Weblocks
+Reblocks-auth is a system for adding authentication for your Reblocks
 application. It allows users to login using multiple ways. Right now
 GitHub is only supported but the list will be extended.
 
