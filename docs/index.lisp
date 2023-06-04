@@ -51,8 +51,13 @@
 [![](https://github-actions.40ants.com/40ants/reblocks-auth/matrix.svg?only=ci.run-tests)](https://github.com/40ants/reblocks-auth/actions)
 
 ![Quicklisp](http://quickdocs.org/badge/reblocks-auth.svg)
+
+Reblocks-auth is a system for adding authentication for your Reblocks application. It allows users to login using multiple ways. Right now GitHub is only supported but the list will be extended.
+
+This system uses [Mito](https://github.com/fukamachi/mito) as a storage to store data about users and their data from service providers. Each user has a unique nickname and an optional email. Also, one or more identity providers can be bound to each user account.
 "
   (@installation section)
+  (@roadmap section)
   ;; (@usage section)
   (@api section))
 
@@ -79,6 +84,14 @@ You can install this library from Quicklisp, but you want to receive updates qui
   "
 TODO: Write a library description. Put some examples here.
 ")
+
+
+(defsection @roadmap (:title "Roadmap")
+  "
+* Add support for authentication by a link sent to the email.
+* Add ability to bind multiple service providers to a single user.")
+
+
 
 
 (defautodoc @api (:system "reblocks-auth"))
