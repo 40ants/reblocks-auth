@@ -21,7 +21,11 @@
            #:get-user-by-email
            #:get-user-by-nickname
            #:change-email
-           #:anonymous-p))
+           #:anonymous-p
+           #:profile-service-user-id
+           #:profile-metadata
+           #:profile-service
+           #:profile-user))
 (in-package reblocks-auth/models)
 
 
@@ -41,19 +45,19 @@
 (defclass social-profile ()
   ((user :col-type user
          :initarg :user
-         :accessor get-user)
+         :accessor profile-user)
    (service :col-type (:text)
             :initarg :service
-            :reader get-service
+            :reader profile-service
             :inflate (lambda (text)
                        (make-keyword (string-upcase text)))
             :deflate #'symbol-name)
    (service-user-id :col-type (:text)
                     :initarg :service-user-id
-                    :reader get-service-user-id)
+                    :reader profile-service-user-id)
    (metadata :col-type (:jsonb)
              :initarg :params
-             :accessor get-metadata
+             :accessor profile-metadata
              :deflate #'jonathan:to-json
              :inflate (lambda (text)
                         (jonathan:parse
@@ -76,8 +80,8 @@
 (defmethod print-object ((obj social-profile) stream)
   (print-unreadable-object (obj stream :type t)
     (format stream "service=~A user-id=~S"
-            (get-service obj)
-            (get-service-user-id obj))))
+            (profile-service obj)
+            (profile-service-user-id obj))))
 
 
 (defun get-all-users ()
@@ -90,7 +94,7 @@
                                  :service service
                                  :service-user-id service-user-id)))
     (when profile
-      (get-user profile))))
+      (profile-user profile))))
 
 
 (defun create-social-user (service
