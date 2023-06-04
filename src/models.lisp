@@ -38,6 +38,8 @@
           :initarg :email
           :initform nil
           :reader get-email))
+  (:documentation "This class stores basic information about user - it's nickname and email.
+                   Additional information is stored inside SOCIAL-PROFILE instances.")
   (:metaclass mito:dao-table-class)
   (:unique-keys email nickname))
 
@@ -45,17 +47,18 @@
 (defclass social-profile ()
   ((user :col-type user
          :initarg :user
-         :accessor profile-user)
-   (service :col-type (:text)
+         :reader profile-user
+         :documentation "A USER instance, bound to the SOCIAL-PROFILE.")
+   (service :col-type :text
             :initarg :service
             :reader profile-service
             :inflate (lambda (text)
                        (make-keyword (string-upcase text)))
             :deflate #'symbol-name)
-   (service-user-id :col-type (:text)
+   (service-user-id :col-type :text
                     :initarg :service-user-id
                     :reader profile-service-user-id)
-   (metadata :col-type (:jsonb)
+   (metadata :col-type :jsonb
              :initarg :params
              :accessor profile-metadata
              :deflate #'jonathan:to-json
