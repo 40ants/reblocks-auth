@@ -1,4 +1,6 @@
+.qlot/
 /docs/build/
-/env/
+*~
+.#*
+.*.~undo-tree~
 .DS_Store
-/.qlot/

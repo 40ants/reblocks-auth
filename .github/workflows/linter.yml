@@ -1,5 +1,5 @@
 {
-  "name": "CI",
+  "name": "LINTER",
   "on": {
     "push": {
       "branches": [
@@ -14,21 +14,12 @@
     ]
   },
   "jobs": {
-    "run-tests": {
-      "strategy": {
-        "fail-fast": false,
-        "matrix": {
-          "lisp": [
-            "sbcl-bin",
-            "ccl-bin/1.12.0"
-          ]
-        }
-      },
+    "linter": {
       "runs-on": "ubuntu-latest",
       "env": {
         "OS": "ubuntu-latest",
         "QUICKLISP_DIST": "quicklisp",
-        "LISP": "${{ matrix.lisp }}"
+        "LISP": "sbcl-bin"
       },
       "steps": [
         {
@@ -52,7 +43,7 @@
           "uses": "actions/cache@v3",
           "with": {
             "path": "qlfile\nqlfile.lock\n~/.cache/common-lisp/\n~/.roswell\n/usr/local/etc/roswell\n/usr/local/bin/ros\n/usr/local/Cellar/roswell\n.qlot",
-            "key": "a-${{ steps.current-month.outputs.value }}-${{ env.cache-name }}-ubuntu-latest-quicklisp-${{ matrix.lisp }}-${{ hashFiles('qlfile.lock', '*.asd') }}"
+            "key": "a-${{ steps.current-month.outputs.value }}-${{ env.cache-name }}-ubuntu-latest-quicklisp-sbcl-bin-${{ hashFiles('qlfile.lock', '*.asd') }}"
           }
         },
         {
@@ -70,12 +61,24 @@
           "if": "steps.cache.outputs.cache-hit != 'true'"
         },
         {
-          "name": "Run Tests",
-          "uses": "40ants/run-tests@v2",
-          "with": {
-            "asdf-system": "reblocks-auth",
-            "coveralls-token": "\n${{ matrix.lisp == 'sbcl-bin' &&\n    matrix.os == 'ubuntu-latest' &&\n    matrix.quicklisp == 'ultralisp' &&\n    secrets.github_token }}"
-          }
+          "name": "Change dist to Ultralisp if qlfile does not exist",
+          "run": "if [[ ! -e qlfile ]]; then echo 'dist ultralisp http://dist.ultralisp.org' > qlfile; fi",
+          "shell": "bash"
+        },
+        {
+          "name": "Update Qlot",
+          "run": "qlot update --no-deps",
+          "shell": "bash"
+        },
+        {
+          "name": "Install SBLint wrapper",
+          "run": "qlot exec ros install 40ants-asdf-system 40ants-linter",
+          "shell": "bash"
+        },
+        {
+          "name": "Run Linter",
+          "run": "qlot exec 40ants-linter --system \"reblocks-auth, reblocks-auth-docs, reblocks-auth-tests\"",
+          "shell": "bash"
         }
       ]
     }

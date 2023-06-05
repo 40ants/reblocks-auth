@@ -41,7 +41,8 @@
   "OAuth secret. It might be a string or secret-values:secret-value.")
 
 
-(defvar *default-scopes* (list "user:email"))
+(defvar *default-scopes* (list "user:email")
+  "A listo of default scopes to request from GitHub.")
 
 
 (defun make-default-redirect-uri ()
