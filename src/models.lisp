@@ -25,7 +25,8 @@
            #:profile-service-user-id
            #:profile-metadata
            #:profile-service
-           #:profile-user))
+           #:profile-user
+           #:user-social-profiles))
 (in-package reblocks-auth/models)
 
 
@@ -124,8 +125,16 @@
 
 
 (defun get-current-user ()
+  "Returns current user or NIL."
   (reblocks/session:get-value
    :user))
+
+
+(defun user-social-profiles (user)
+  "Returns a list of social profiles, bound to the user."
+  (check-type user user)
+  (mito:retrieve-dao 'social-profile
+                     :user-id (mito:object-id user)))
 
 
 (defun (setf get-current-user) (user)

@@ -23,6 +23,8 @@
                               "ASDF"
                               "REPL"
                               "HTTP"))
+  (0.7.0 2022-06-07
+         "* Added documentation and an example application.")
   (0.6.0 2021-01-24
          "* Added support for `secret-values` in *SECRET*.")
   (0.5.1 2019-06-24
