@@ -29,7 +29,9 @@
            #:*enabled-services*
            #:make-login-processor
            #:make-logout-processor
-           #:render-buttons))
+           #:render-buttons
+           #:login-processor
+           #:logout-processor))
 (in-package reblocks-auth/core)
 
 
@@ -43,13 +45,12 @@
 
 (defwidget login-processor ()
   ()
-  (:documentation "Этот виджет мы показываем, когда обрабатываем логин
-                   пользователя посредством кода из письма или нужно отрисовать форму логина."))
+  (:documentation "This widget should be rendered to process user's login."))
 
 
 (defwidget logout-processor ()
   ()
-  (:documentation "Этот виджет мы показываем, когда нужно разлогинить пользователя."))
+  (:documentation "This widget should be rendered to process user's logout."))
 
 
 (defun make-login-processor ()
@@ -68,6 +69,10 @@
 
 
 (defun render-buttons (&key retpath)
+  "Renders a row of buttons for enabled service providers.
+
+   Optionally you can specify RETPATH argument with an URI to return user
+   after login."
   (loop for service in *enabled-services*
         do (reblocks-auth/button:render service
                                         :retpath retpath)))

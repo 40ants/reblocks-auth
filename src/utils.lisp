@@ -1,10 +1,7 @@
-(defpackage #:reblocks-auth/utils
+(uiop:define-package #:reblocks-auth/utils
   (:use #:cl)
   (:import-from #:alexandria
-                #:make-keyword)
-  (:export
-   #:to-plist
-   #:keywordify))
+                #:make-keyword))
 (in-package reblocks-auth/utils)
 
 
