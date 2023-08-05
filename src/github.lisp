@@ -23,13 +23,12 @@
                 #:get-uri)
   (:import-from #:secret-values
                 #:ensure-value-revealed)
-  (:export
-   #:*client-id*
-   #:*secret*
-   #:get-token
-   #:get-scopes
-   #:*default-scopes*
-   #:render-button))
+  (:export #:*client-id*
+           #:*secret*
+           #:get-token
+           #:get-scopes
+           #:*default-scopes*
+           #:render-button))
 (in-package reblocks-auth/github)
 
 

@@ -1,6 +1,5 @@
 (uiop:define-package #:reblocks-auth-example/app
   (:use #:cl)
-  (:import-from #:reblocks)
   (:import-from #:reblocks-auth)
   (:import-from #:reblocks-navigation-widget
                 #:defroutes)

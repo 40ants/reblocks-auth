@@ -1,4 +1,4 @@
-(defpackage #:reblocks-auth/models
+(uiop:define-package #:reblocks-auth/models
   (:use #:cl)
   (:import-from #:jonathan)
   (:import-from #:reblocks/session)
@@ -10,6 +10,8 @@
                 #:delete-dao
                 #:select-dao
                 #:create-dao)
+  (:import-from #:reblocks-auth/errors
+                #:nickname-is-not-available)
   (:export #:find-social-user
            #:create-social-user
            #:user
@@ -26,8 +28,9 @@
            #:profile-metadata
            #:profile-service
            #:profile-user
-           #:user-social-profiles))
-(in-package reblocks-auth/models)
+           #:user-social-profiles
+           #:change-nickname))
+(in-package #:reblocks-auth/models)
 
 
 (defclass user ()
@@ -155,6 +158,20 @@
 (defun get-user-by-nickname (nickname)
   "Returns a user with given email."
   (mito:find-dao 'user :nickname nickname))
+
+
+(defun change-nickname (new-nickname)
+  "Changes nickname of the current user."
+  (let ((user (get-current-user)))
+    (when user
+      ;; First, check if nickname is available
+      (when (get-user-by-nickname new-nickname)
+        (error 'nickname-is-not-available))
+      
+      (setf (slot-value user 'nickname)
+            new-nickname)
+      (mito:save-dao user)))
+  (values))
 
 
 (defun change-email (user email)

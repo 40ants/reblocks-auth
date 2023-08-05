@@ -7,5 +7,6 @@
   :defsystem-depends-on ("40ants-asdf-system")
   :pathname "src"
   :depends-on ("reblocks"
+               "clack-handler-hunchentoot"
                "reblocks-auth-example/server")
   :in-order-to ((test-op (test-op "reblocks-auth-example-tests"))))
