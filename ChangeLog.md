@@ -2,6 +2,54 @@
 
 # ChangeLog
 
+<a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E8-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.8.0 (2023-08-04)
+
+New authentication provider was added. It will send an authentication `URL` to user's email.
+
+To make it work, you'll need to add this table to the database:
+
+```
+CREATE TABLE registration_code (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    valid_until TIMESTAMP NOT NULL,
+    created_at TIMESTAMPTZ,
+    updated_at TIMESTAMPTZ
+);
+```
+After that, do this to enable the auth provider:
+
+```
+(pushnew :email reblocks-auth:*enabled-services*)
+```
+Also, you'll need to provide credentials for working with Mailgun service. At the moment
+sending email works only via this service, but other methods can be implemented.
+
+If you decide to go with default sending method, define email template like this:
+
+```
+(define-code-sender send-code ("Ultralisp.org <noreply@ultralisp.org>" url)
+  (:p ("To log into [Ultralisp.org](~A), follow [this link](~A)."
+       url
+       url))
+  (:p "Hurry up! This link will expire in one hour."))
+```
+Here is how to provide credentials to make sending work:
+
+```
+(setf mailgun:*domain* "mg.ultralisp.org")
+
+(setf mailgun:*api-key*
+      (secret-values:conceal-value
+       "********************************-*********-*********"))
+```
+To supply an alternative sending method, define a function of two arguments: email and url.
+Set [`reblocks-auth/providers/email/models:*send-code-callback*`][342f] variable to the value
+of this function.
+
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E7-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.7.0 (2022-06-07)
@@ -73,6 +121,7 @@ caused an error when searching a social user.
 [6ced]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-NICKNAME-20FUNCTION-29
 [d9d6]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-20CLASS-29
 [05f7]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AUSER-20CLASS-29
+[342f]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3A-2ASEND-CODE-CALLBACK-2A-20-28VARIABLE-29-29
 [fd4e]: https://github.com/fukamachi/mito/commit/be0ea57df921aa1beb2045b50a8c2e2e4f8b8955
 
 * * *
