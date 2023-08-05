@@ -62,5 +62,9 @@
      `(.landing-page
        :padding 1rem
        ((:and p :last-child)
-        :margin-bottom 0)))
+        :margin-bottom 0)
+
+       (.auth-buttons
+        :display flex
+        :gap 1rem)))
    (call-next-method)))

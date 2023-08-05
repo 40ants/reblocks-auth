@@ -1,6 +1,5 @@
 (uiop:define-package #:reblocks-auth-example/server
   (:use #:cl)
-  (:import-from #:clack-handler-hunchentoot)
   (:import-from #:reblocks/server)
   (:import-from #:reblocks/debug)
   (:import-from #:reblocks/variables)
@@ -12,6 +11,8 @@
   (:import-from #:reblocks-auth/models)
   (:import-from #:reblocks-auth-example/app
                 #:app)
+  (:import-from #:reblocks-auth/providers/email/mailgun
+                #:define-code-sender)
   (:shadow #:restart)
   (:export #:start
            #:restart
@@ -106,4 +107,12 @@
   (mito:connect-toplevel :sqlite3 :database-name ":memory:")
   (mito:ensure-table-exists 'reblocks-auth/models:user)
   (mito:ensure-table-exists 'reblocks-auth/models:social-profile)
+  (mito:ensure-table-exists 'reblocks-auth/providers/email/models:registration-code)
   (values))
+
+
+(define-code-sender send-code ("Ultralisp.org <noreply@ultralisp.org>" url)
+  (:p ("To log into [Ultralisp.org](~A), follow [this link](~A)."
+       url
+       url))
+  (:p "Hurry up! This link will expire in one hour."))

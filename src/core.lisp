@@ -1,7 +1,8 @@
-(defpackage #:reblocks-auth/core
+(uiop:define-package #:reblocks-auth/core
   (:nicknames #:reblocks-auth)
   (:use #:cl)
   (:import-from #:log4cl)
+  (:import-from #:reblocks-lass)
   (:import-from #:reblocks-auth/button)
   (:import-from #:reblocks-auth/auth)
   (:import-from #:reblocks/response
@@ -25,6 +26,8 @@
                 #:with-html)
   (:import-from #:reblocks-auth/models
                 #:get-current-user)
+  (:import-from #:reblocks/dependencies
+                #:get-dependencies)
   (:export #:*login-hooks*
            #:*enabled-services*
            #:make-login-processor
@@ -73,9 +76,11 @@
 
    Optionally you can specify RETPATH argument with an URI to return user
    after login."
-  (loop for service in *enabled-services*
-        do (reblocks-auth/button:render service
-                                        :retpath retpath)))
+  (with-html
+    (:div :class "auth-buttons"
+          (loop for service in *enabled-services*
+                do (reblocks-auth/button:render service
+                                                :retpath retpath)))))
 
 
 (defmethod render ((widget login-processor))
@@ -90,7 +95,7 @@
     ;;   (t (setf retpath
     ;;            (get-retpath widget))))
 
-    (reblocks/html:with-html
+    (with-html
       (:h1 "Login with"))
 
     (cond (service
@@ -122,7 +127,7 @@
                  (with-html
                    (:p :class "label alert"
                        (get-message condition))
-                   (:p (render-buttons :retpath retpath)))))))
+                   (render-buttons :retpath retpath))))))
 
           ;; Here we just show the raw of available buttons
           ;; to login via different identity providers
@@ -135,3 +140,12 @@
                      "/")))
     (reblocks/session:reset)
     (redirect retpath)))
+
+
+(defmethod get-dependencies ((widget login-processor))
+  (list*
+   (reblocks-lass:make-dependency
+     `(.auth-buttons
+       :display flex
+       :gap 1rem))
+   (call-next-method)))

@@ -11,5 +11,7 @@
   :pathname "src"
   :depends-on ("reblocks-auth/core"
                "reblocks-auth/github"
+               "reblocks-auth/providers/email/processing"
+               "reblocks-auth/providers/email/mailgun"
                "reblocks-auth/models")
   :in-order-to ((test-op (test-op "reblocks-auth-tests"))))
