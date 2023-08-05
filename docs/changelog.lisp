@@ -71,7 +71,7 @@
           ```
 
           To supply an alternative sending method, define a function of two arguments: email and url.
-          Set REBLOCKS-AUTH/PROVIDERS/EMAIL/MODELS::*SEND-CODE-CALLBACK* variable to the value
+          Set REBLOCKS-AUTH/PROVIDERS/EMAIL/MODELS:*SEND-CODE-CALLBACK* variable to the value
           of this function.
 ")
   (0.7.0 2022-06-07

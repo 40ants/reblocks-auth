@@ -11,8 +11,10 @@
   (:import-from #:mito
                 #:find-dao
                 #:create-dao)
-  (:export
-   #:registration-code))
+  (:export #:registration-code
+           #:*send-code-callback*
+           #:registration-email
+           #:valid-until))
 (in-package #:reblocks-auth/providers/email/models)
 
 
