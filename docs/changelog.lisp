@@ -23,7 +23,10 @@
                               "ASDF"
                               "REPL"
                               "URL"
+                              "API"
                               "HTTP"))
+  (0.9.0 2023-10-01
+         "Email authentication provider now is able to use Resend API. Load `reblocks-auth/providers/email/resend` ASDF system to enable this feature.")
   (0.8.0 2023-08-04
          "New authentication provider was added. It will send an authentication URL to user's email.
 
