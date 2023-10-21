@@ -25,6 +25,14 @@
                               "URL"
                               "API"
                               "HTTP"))
+  (0.10.0 2023-10-22
+          "Experimental reCaptcha support was added into email provider.
+
+           Set REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:*RECAPTCHA-SITE-KEY*
+           and REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:*RECAPTCHA-SECRET-KEY*
+           variables to try it.
+
+           Note: this version requires a new Reblocks, where was added get-remote-ip function.")
   (0.9.0 2023-10-01
          "Email authentication provider now is able to use Resend API. Load `reblocks-auth/providers/email/resend` ASDF system to enable this feature.")
   (0.8.0 2023-08-04
