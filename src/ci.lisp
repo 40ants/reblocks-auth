@@ -1,6 +1,7 @@
 (uiop:define-package #:reblocks-auth-ci/ci
   (:use #:cl)
   (:import-from #:40ants-ci/jobs/linter)
+  (:import-from #:40ants-ci/jobs/autotag)
   (:import-from #:40ants-ci/jobs/run-tests
                 #:run-tests)
   (:import-from #:40ants-ci/jobs/docs
@@ -8,6 +9,11 @@
   (:import-from #:40ants-ci/workflow
                 #:defworkflow))
 (in-package #:reblocks-auth-ci/ci)
+
+
+(defworkflow release
+  :on-push-to "master"
+  :jobs ((40ants-ci/jobs/autotag:autotag)))
 
 
 (defworkflow linter
@@ -18,7 +24,8 @@
   :jobs ((40ants-ci/jobs/linter:linter
           :asdf-systems ("reblocks-auth"
                          "reblocks-auth-docs"
-                         "reblocks-auth-tests"))))
+                         "reblocks-auth-tests")
+          :check-imports t)))
 
 (defworkflow docs
   :on-push-to "master"
