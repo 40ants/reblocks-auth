@@ -75,11 +75,19 @@ It should send a registration code using template, suitable for your website.")
                 :valid-until valid-until)))
 
 
-(defun send-code (email &key retpath)
+(defun send-code (email &key retpath send-callback)
+  "Usually you should define a global callback using
+   REBLOCKS-AUTH/PROVIDERS/EMAIL/MAILGUN:DEFINE-CODE-SENDER macro,
+   but you can provide an alternative function to handle
+   email sending."
   (log:info "Sending auth code to" email)
   
   (let* ((code (make-registration-code email)))
     (cond
+      (send-callback
+       (funcall send-callback
+                code
+                :retpath retpath))
       ((boundp '*send-code-callback*)
        (funcall *send-code-callback*
                 code

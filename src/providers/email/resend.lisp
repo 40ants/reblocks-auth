@@ -13,7 +13,7 @@
 (in-package #:reblocks-auth/providers/email/resend)
 
 
-(defun make-code-sender (thunk)
+(defun make-code-sender (thunk &key base-uri)
   (flet ((resend-code-sender (registration-code &key retpath)
            (let* ((email (registration-email registration-code))
                   (params (append
@@ -24,7 +24,8 @@
                   (url (make-uri
                         (format nil
                                 "/login?~A"
-                                (quri:url-encode-params params)))))
+                                (quri:url-encode-params params))
+                        :base-uri base-uri)))
 
              (cond
                (resend:*api-key*

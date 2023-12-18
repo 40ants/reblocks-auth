@@ -25,6 +25,23 @@
                               "URL"
                               "API"
                               "HTTP"))
+  (0.11.0 2023-12-18
+          "
+Added
+=====
+
+- REBLOCKS-AUTH/CORE:RENDER-LOGIN-PAGE generic-function was added allowing to make a custom.
+  Widget class REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:REQUEST-CODE-FORM, REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:RENDER-SUBMIT-BUTTON generic-function, REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:RENDER-EMAIL-INPUT generic-function, REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:FORM-CSS-CLASSES generic-function and REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:RENDER-SENT-MESSAGE generic-function were added to allow login page customizations.
+- Added REBLOCKS-AUTH/CORE:*ALLOW-NEW-ACCOUNTS-CREATION* variable to control if new accounts can be registered.
+- Added REBLOCKS-AUTH/MODELS:*USER-CLASS* variable. This allows to make a custom user model with additional fields.
+
+Changed
+=======
+
+- Now when user authenticates using email, we fill email column.
+- Function REBLOCKS-AUTH/PROVIDERS/EMAIL/MODELS:SEND-CODE now accepts SEND-CALLBACK argument. This argument can be used when you need to send login code with a custom email markup. For example, this way a special welcome email can be sent when a new user was added by a site admin.
+- Function REBLOCKS-AUTH/PROVIDERS/EMAIL/RESEND:MAKE-CODE-SENDER now accepts additional argument BASE-URI.
+")
   (0.10.0 2023-10-22
           "Experimental reCaptcha support was added into email provider.
 

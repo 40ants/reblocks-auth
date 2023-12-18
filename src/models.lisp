@@ -29,7 +29,8 @@
            #:profile-service
            #:profile-user
            #:user-social-profiles
-           #:change-nickname))
+           #:change-nickname
+           #:*user-class*))
 (in-package #:reblocks-auth/models)
 
 
@@ -37,6 +38,9 @@
   ((nickname :col-type (:text)
              :initarg :nickname
              :reader get-nickname)
+   ;; TODO: think how to make this column unique
+   ;; and what to do when there is already a user with
+   ;; given email but without a :email social_profile
    (email :col-type (or (:varchar 255)
                         :null)
           :initarg :email
@@ -48,7 +52,12 @@
   (:unique-keys email nickname))
 
 
+(defvar *user-class* 'user
+  "Allows to redefine a model, for users to be created by the reblocks-auth.")
+
+
 (defclass social-profile ()
+  ;; TODO: I need to understand how to make MITO use *user-class* instead of 'user here:
   ((user :col-type user
          :initarg :user
          ;; No source location found for reference 
@@ -95,7 +104,7 @@
 
 
 (defun get-all-users ()
-  (mito:select-dao 'user))
+  (mito:select-dao *user-class*))
 
 
 (defun find-social-user (service service-user-id)
@@ -115,9 +124,16 @@
   (check-type service-user-id string)
   (check-type email (or string
                         null))
+
+  ;; I tried to do this, but then internal user addition does not work
+  ;; so we have to disable it on form
+  ;; (unless (symbol-value (uiop:find-symbol* :*allow-new-accounts-creation*
+  ;;                                          :reblocks-auth/core))
+  ;;   (error 'new-accounts-are-prohibited))
   
-  (let ((user (mito:create-dao 'user
-                               :nickname service-user-id)))
+  (let ((user (mito:create-dao *user-class*
+                               :nickname service-user-id
+                               :email email)))
       
     (mito:create-dao 'social-profile
                      :user user
@@ -152,12 +168,12 @@
 
 (defun get-user-by-email (email)
   "Returns a user with given email."
-  (mito:find-dao 'user :email email))
+  (mito:find-dao *user-class* :email email))
 
 
 (defun get-user-by-nickname (nickname)
   "Returns a user with given email."
-  (mito:find-dao 'user :nickname nickname))
+  (mito:find-dao *user-class* :nickname nickname))
 
 
 (defun change-nickname (new-nickname)
