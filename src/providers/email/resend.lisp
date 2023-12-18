@@ -8,12 +8,15 @@
   (:import-from #:reblocks-auth/providers/email/models
                 #:registration-code
                 #:registration-email)
-  (:export
-   #:define-code-sender))
+  (:export #:define-code-sender
+           #:make-code-sender))
 (in-package #:reblocks-auth/providers/email/resend)
 
 
-(defun make-code-sender (thunk)
+(defun make-code-sender (thunk &key base-uri)
+  "Makes a function which will prepare params and call THUNK function with email and URL.
+
+   Usually you don't need to call this function directly and you can use just DEFINE-CODE-SENDER macro."
   (flet ((resend-code-sender (registration-code &key retpath)
            (let* ((email (registration-email registration-code))
                   (params (append
@@ -24,7 +27,8 @@
                   (url (make-uri
                         (format nil
                                 "/login?~A"
-                                (quri:url-encode-params params)))))
+                                (quri:url-encode-params params))
+                        :base-uri base-uri)))
 
              (cond
                (resend:*api-key*

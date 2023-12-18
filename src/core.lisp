@@ -1,7 +1,7 @@
 (uiop:define-package #:reblocks-auth/core
   (:nicknames #:reblocks-auth)
   (:use #:cl)
-  (:import-from #:log4cl)
+  (:import-from #:log)
   (:import-from #:reblocks-lass)
   (:import-from #:reblocks-auth/button)
   (:import-from #:reblocks-auth/auth)
@@ -14,8 +14,6 @@
                 #:widget
                 #:render
                 #:defwidget)
-  (:import-from #:reblocks/page
-                #:get-title)
   (:import-from #:reblocks-auth/utils
                 #:keywordify
                 #:to-plist)
@@ -28,13 +26,17 @@
                 #:get-current-user)
   (:import-from #:reblocks/dependencies
                 #:get-dependencies)
+  (:import-from #:reblocks/app)
+  (:import-from #:reblocks/session)
   (:export #:*login-hooks*
            #:*enabled-services*
            #:make-login-processor
            #:make-logout-processor
            #:render-buttons
            #:login-processor
-           #:logout-processor))
+           #:logout-processor
+           #:render-login-page
+           #:*allow-new-accounts-creation*))
 (in-package reblocks-auth/core)
 
 
@@ -44,6 +46,10 @@
 
 (defvar *login-hooks* nil
   "Append a funcallable handlers which accept single argument - logged user.")
+
+
+(defvar *allow-new-accounts-creation* t
+  "When True, a new account will be created. Otherwise only already existing users can log in.")
 
 
 (defwidget login-processor ()
@@ -95,9 +101,6 @@
     ;;   (t (setf retpath
     ;;            (get-retpath widget))))
 
-    (with-html
-      (:h1 "Login with"))
-
     (cond (service
            (let ((params (to-plist (get-parameters)
                                    :without '(:service))))
@@ -127,12 +130,24 @@
                  (with-html
                    (:p :class "label alert"
                        (get-message condition))
-                   (render-buttons :retpath retpath))))))
+                   (render-login-page (reblocks/app:get-current)
+                                      :retpath retpath))))))
 
           ;; Here we just show the raw of available buttons
           ;; to login via different identity providers
           (t
-           (render-buttons :retpath retpath)))))
+           (render-login-page (reblocks/app:get-current)
+                              :retpath retpath)))))
+
+
+(defgeneric render-login-page (app &key retpath)
+  (:documentation "By default, renders a list of buttons for each allowed authentication method.")
+  (:method ((app t) &key retpath)
+
+    (with-html
+      (:h1 "Login with"))
+    
+    (render-buttons :retpath retpath)))
 
 
 (defmethod render ((widget logout-processor))

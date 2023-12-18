@@ -15,6 +15,7 @@
                 #:docs-config)
   (:import-from #:40ants-doc/autodoc
                 #:defautodoc)
+  (:import-from #:reblocks-auth/models)
   (:export #:@index
            #:@readme
            #:@changelog))

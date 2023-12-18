@@ -1,5 +1,6 @@
 (uiop:define-package #:reblocks-auth/providers/email/mailgun
   (:use #:cl)
+  (:import-from #:log)
   (:import-from #:mailgun)
   (:import-from #:reblocks/response
                 #:make-uri)
@@ -8,6 +9,8 @@
   (:import-from #:reblocks-auth/providers/email/models
                 #:registration-code
                 #:registration-email)
+  (:import-from #:quri
+                #:url-encode-params)
   (:export
    #:define-code-sender))
 (in-package #:reblocks-auth/providers/email/mailgun)
@@ -24,7 +27,7 @@
                   (url (make-uri
                         (format nil
                                 "/login?~A"
-                                (quri:url-encode-params params)))))
+                                (url-encode-params params)))))
 
              (cond
                ((and mailgun:*domain*

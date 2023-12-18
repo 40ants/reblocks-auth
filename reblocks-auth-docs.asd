@@ -8,4 +8,6 @@
   :bug-tracker "https://github.com/40ants/reblocks-auth/issues"
   :pathname "docs"
   :depends-on ("reblocks-auth"
+               "reblocks-auth/providers/email/resend"
+               "reblocks-auth/providers/email/mailgun"
                "reblocks-auth-docs/index"))

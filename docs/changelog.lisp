@@ -1,21 +1,7 @@
 (uiop:define-package #:reblocks-auth-docs/changelog
   (:use #:cl)
   (:import-from #:40ants-doc/changelog
-                #:defchangelog)
-  (:import-from #:reblocks-auth/github
-                #:get-scopes
-                #:render-button
-                #:*secret*)
-  (:import-from #:reblocks-auth/models
-                #:get-user-by-nickname
-                #:get-user-by-email
-                #:social-profile
-                #:user
-                #:change-email)
-  (:import-from #:reblocks-auth/core
-                #:render-buttons
-                #:*enabled-services*
-                #:*login-hooks*))
+                #:defchangelog))
 (in-package #:reblocks-auth-docs/changelog)
 
 
@@ -25,6 +11,23 @@
                               "URL"
                               "API"
                               "HTTP"))
+  (0.11.0 2023-12-18
+          "
+Added
+=====
+
+- REBLOCKS-AUTH/CORE:RENDER-LOGIN-PAGE generic-function was added allowing to make a custom.
+  Widget class REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:REQUEST-CODE-FORM, REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:RENDER-SUBMIT-BUTTON generic-function, REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:RENDER-EMAIL-INPUT generic-function, REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:FORM-CSS-CLASSES generic-function and REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:RENDER-SENT-MESSAGE generic-function were added to allow login page customizations.
+- Added REBLOCKS-AUTH/CORE:*ALLOW-NEW-ACCOUNTS-CREATION* variable to control if new accounts can be registered.
+- Added REBLOCKS-AUTH/MODELS:*USER-CLASS* variable. This allows to make a custom user model with additional fields.
+
+Changed
+=======
+
+- Now when user authenticates using email, we fill email column.
+- Function REBLOCKS-AUTH/PROVIDERS/EMAIL/MODELS:SEND-CODE now accepts SEND-CALLBACK argument. This argument can be used when you need to send login code with a custom email markup. For example, this way a special welcome email can be sent when a new user was added by a site admin.
+- Function REBLOCKS-AUTH/PROVIDERS/EMAIL/RESEND:MAKE-CODE-SENDER now accepts additional argument BASE-URI.
+")
   (0.10.0 2023-10-22
           "Experimental reCaptcha support was added into email provider.
 
@@ -88,23 +91,23 @@
   (0.7.0 2022-06-07
          "* Added documentation and an example application.")
   (0.6.0 2021-01-24
-         "* Added support for `secret-values` in *SECRET*.")
+         "* Added support for `secret-values` in REBLOCKS-AUTH/GITHUB:*SECRET*.")
   (0.5.1 2019-06-24
          "* Supported recent change [of mito](https://github.com/fukamachi/mito/commit/be0ea57df921aa1beb2045b50a8c2e2e4f8b8955)
             caused an error when searching a social user.")
   (0.5.0 2019-06-22
-         "* Added a CHANGE-EMAIL function.")
+         "* Added a REBLOCKS-AUTH/MODELS:CHANGE-EMAIL function.")
   (0.4.0 2019-06-20
-         "* Added a new variable *LOGIN-HOOKS*.
-          * A variable *ENABLED-SERVICES* was exported.
-          * A function RENDER-BUTTONS was exported.")
+         "* Added a new variable REBLOCKS-AUTH/CORE:*LOGIN-HOOKS*.
+          * A variable REBLOCKS-AUTH/CORE:*ENABLED-SERVICES* was exported.
+          * A function REBLOCKS-AUTH/CORE:RENDER-BUTTONS was exported.")
   (0.3.0 2019-04-18
-         "* Now classes USER and SOCIAL-PROFILE are exported from `reblocks-auth/models` system.
-          * New function were added: GET-USER-BY-EMAIL and GET-USER-BY-NICKNAME.")
+         "* Now classes REBLOCKS-AUTH/MODELS:USER and REBLOCKS-AUTH/MODELS:SOCIAL-PROFILE are exported from `reblocks-auth/models` system.
+          * New function were added: REBLOCKS-AUTH/MODELS:GET-USER-BY-EMAIL and REBLOCKS-AUTH/MODELS:GET-USER-BY-NICKNAME.")
   (0.2.0 2019-04-17
          "* Now only `user:email` scope is required for authentication
             via github.
-          * And RENDER-BUTTON GET-SCOPES
+          * And REBLOCKS-AUTH/GITHUB:RENDER-BUTTON, REBLOCKS-AUTH/GITHUB:GET-SCOPES
             functions was added to request more scopes if required.")
   (0.1.0 2019-03-31
          "* First version with GitHub authentication."))
