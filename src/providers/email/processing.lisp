@@ -5,6 +5,8 @@
                 #:check-registration-code)
   (:import-from #:reblocks/html
                 #:with-html)
+  (:import-from #:dexador)
+  (:import-from #:log)
   (:import-from #:reblocks/widget
                 #:defwidget)
   (:import-from #:reblocks-auth/button)
@@ -22,6 +24,9 @@
                 #:get-user-by-email)
   (:import-from #:serapeum
                 #:fmt)
+  (:import-from #:reblocks-auth/auth)
+  (:import-from #:reblocks/request)
+  (:import-from #:yason)
   (:export #:*recaptcha-site-key*
            #:*recaptcha-secret-key*
            #:request-code-form

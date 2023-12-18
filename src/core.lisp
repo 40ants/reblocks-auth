@@ -1,7 +1,7 @@
 (uiop:define-package #:reblocks-auth/core
   (:nicknames #:reblocks-auth)
   (:use #:cl)
-  (:import-from #:log4cl)
+  (:import-from #:log)
   (:import-from #:reblocks-lass)
   (:import-from #:reblocks-auth/button)
   (:import-from #:reblocks-auth/auth)
@@ -14,8 +14,6 @@
                 #:widget
                 #:render
                 #:defwidget)
-  (:import-from #:reblocks/page
-                #:get-title)
   (:import-from #:reblocks-auth/utils
                 #:keywordify
                 #:to-plist)
@@ -28,6 +26,8 @@
                 #:get-current-user)
   (:import-from #:reblocks/dependencies
                 #:get-dependencies)
+  (:import-from #:reblocks/app)
+  (:import-from #:reblocks/session)
   (:export #:*login-hooks*
            #:*enabled-services*
            #:make-login-processor

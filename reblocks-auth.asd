@@ -15,3 +15,6 @@
                "reblocks-auth/providers/email/mailgun"
                "reblocks-auth/models")
   :in-order-to ((test-op (test-op "reblocks-auth-tests"))))
+
+
+(asdf:register-system-packages "log4cl" '("LOG"))

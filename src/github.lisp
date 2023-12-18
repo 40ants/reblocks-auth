@@ -1,7 +1,7 @@
 (defpackage #:reblocks-auth/github
   (:use #:cl)
   (:import-from #:dexador)
-  (:import-from #:log4cl)
+  (:import-from #:log)
   (:import-from #:jonathan
                 #:to-json)
   (:import-from #:reblocks-auth/button)
@@ -23,6 +23,7 @@
                 #:get-uri)
   (:import-from #:secret-values
                 #:ensure-value-revealed)
+  (:import-from #:reblocks/session)
   (:export #:*client-id*
            #:*secret*
            #:get-token

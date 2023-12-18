@@ -4,8 +4,6 @@
                 #:pythonic-string-syntax)
   #+quicklisp
   (:import-from #:quicklisp)
-  (:import-from #:reblocks-auth/providers/email/resend)
-  (:import-from #:reblocks-auth/providers/email/mailgun)
   (:import-from #:named-readtables
                 #:in-readtable)
   (:import-from #:40ants-doc
@@ -17,6 +15,7 @@
                 #:docs-config)
   (:import-from #:40ants-doc/autodoc
                 #:defautodoc)
+  (:import-from #:reblocks-auth/models)
   (:export #:@index
            #:@readme
            #:@changelog))

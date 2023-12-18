@@ -1,7 +1,6 @@
 (uiop:define-package #:reblocks-auth/providers/email/models
   (:use #:cl)
-  (:import-from #:log4cl)
-  (:import-from #:mailgun)
+  (:import-from #:log)
   (:import-from #:local-time
                 #:timestamp<
                 #:timestamp+
