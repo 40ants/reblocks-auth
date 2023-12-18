@@ -14,7 +14,8 @@
   (:export #:registration-code
            #:*send-code-callback*
            #:registration-email
-           #:valid-until))
+           #:valid-until
+           #:send-code))
 (in-package #:reblocks-auth/providers/email/models)
 
 

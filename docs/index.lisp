@@ -4,6 +4,8 @@
                 #:pythonic-string-syntax)
   #+quicklisp
   (:import-from #:quicklisp)
+  (:import-from #:reblocks-auth/providers/email/resend)
+  (:import-from #:reblocks-auth/providers/email/mailgun)
   (:import-from #:named-readtables
                 #:in-readtable)
   (:import-from #:40ants-doc
@@ -64,6 +66,9 @@ This system uses [Mito](https://github.com/fukamachi/mito) as a storage to store
   (@example section)
   (@usage section)
   (@api section)
+  ;; (@providers-api section)
+  ;; (@providers-resend-api section)
+  ;; (@providers-mailgun-api section)
   (@roadmap section))
 
 
@@ -153,3 +158,9 @@ When you'll open the http://localhost:8080/ you will see this simple website:
 
 
 (defautodoc @api (:system "reblocks-auth"))
+
+;; (defautodoc @providers-api (:system "reblocks-auth/providers/email/models"))
+
+;; (defautodoc @providers-resend-api (:system "reblocks-auth/providers/email/resend"))
+
+;; (defautodoc @providers-mailgun-api (:system "reblocks-auth/providers/email/mailgun"))

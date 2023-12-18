@@ -28,7 +28,9 @@
            #:render-submit-button
            #:render-email-input
            #:form-css-classes
-           #:render-sent-message))
+           #:render-sent-message
+           #:retpath
+           #:sent))
 (in-package #:reblocks-auth/providers/email/processing)
 
 
