@@ -2,6 +2,27 @@
 
 # ChangeLog
 
+<a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E11-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.11.0 (2023-12-18)
+
+<a id="added"></a>
+
+### Added
+
+* [`reblocks-auth/core:render-login-page`][5588] generic-function was added allowing to make a custom.
+  Widget class [`reblocks-auth/providers/email/processing:request-code-form`][a366], [`reblocks-auth/providers/email/processing:render-submit-button`][1fdc] generic-function, [`reblocks-auth/providers/email/processing:render-email-input`][fc5a] generic-function, [`reblocks-auth/providers/email/processing:form-css-classes`][11c6] generic-function and [`reblocks-auth/providers/email/processing:render-sent-message`][e8ad] generic-function were added to allow login page customizations.
+* Added [`reblocks-auth/core:*allow-new-accounts-creation*`][89ea] variable to control if new accounts can be registered.
+* Added [`reblocks-auth/models:*user-class*`][9da0] variable. This allows to make a custom user model with additional fields.
+
+<a id="changed"></a>
+
+### Changed
+
+* Now when user authenticates using email, we fill email column.
+* Function [`reblocks-auth/providers/email/models:send-code`][0ce2] now accepts `SEND-CALLBACK` argument. This argument can be used when you need to send login code with a custom email markup. For example, this way a special welcome email can be sent when a new user was added by a site admin.
+* Function [`reblocks-auth/providers/email/resend:make-code-sender`][4fbd] now accepts additional argument `BASE-URI`.
+
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E10-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.10.0 (2023-10-22)
@@ -78,7 +99,7 @@ of this function.
 
 ## 0.6.0 (2021-01-24)
 
-* Added support for `secret-values` in [`*secret*`][d659].
+* Added support for `secret-values` in [`reblocks-auth/github:*secret*`][d659].
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E5-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -91,25 +112,22 @@ caused an error when searching a social user.
 
 ## 0.5.0 (2019-06-22)
 
-* Added a [`change-email`][f951] function.
+* Added a [`reblocks-auth/models:change-email`][f951] function.
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E4-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.4.0 (2019-06-20)
 
-* Added a new variable [`*login-hooks*`][0e88].
-
-* A variable [`*enabled-services*`][ac4c] was exported.
-
-* A function [`render-buttons`][69ac] was exported.
+* Added a new variable [`reblocks-auth/core:*login-hooks*`][0e88].
+* A variable [`reblocks-auth/core:*enabled-services*`][ac4c] was exported.
+* A function [`reblocks-auth/core:render-buttons`][69ac] was exported.
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E3-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.3.0 (2019-04-18)
 
-* Now classes [`user`][05f7] and [`social-profile`][d9d6] are exported from `reblocks-auth/models` system.
-
-* New function were added: [`get-user-by-email`][85b4] and [`get-user-by-nickname`][6ced].
+* Now classes [`reblocks-auth/models:user`][05f7] and [`reblocks-auth/models:social-profile`][d9d6] are exported from `reblocks-auth/models` system.
+* New function were added: [`reblocks-auth/models:get-user-by-email`][85b4] and [`reblocks-auth/models:get-user-by-nickname`][6ced].
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E2-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -117,8 +135,7 @@ caused an error when searching a social user.
 
 * Now only `user:email` scope is required for authentication
   via github.
-
-* And [`render-button`][b194] [`get-scopes`][e605]
+* And [`reblocks-auth/github:render-button`][b194], [`reblocks-auth/github:get-scopes`][e605]
   functions was added to request more scopes if required.
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E1-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
@@ -128,20 +145,30 @@ caused an error when searching a social user.
 * First version with GitHub authentication.
 
 
+[89ea]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3A-2AALLOW-NEW-ACCOUNTS-CREATION-2A-20-28VARIABLE-29-29
 [ac4c]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3A-2AENABLED-SERVICES-2A-20-28VARIABLE-29-29
 [0e88]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3A-2ALOGIN-HOOKS-2A-20-28VARIABLE-29-29
 [69ac]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3ARENDER-BUTTONS-20FUNCTION-29
+[5588]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3ARENDER-LOGIN-PAGE-20GENERIC-FUNCTION-29
 [d659]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FGITHUB-3A-2ASECRET-2A-20-28VARIABLE-29-29
 [e605]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FGITHUB-3AGET-SCOPES-20FUNCTION-29
 [b194]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FGITHUB-3ARENDER-BUTTON-20FUNCTION-29
+[9da0]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3A-2AUSER-CLASS-2A-20-28VARIABLE-29-29
 [f951]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3ACHANGE-EMAIL-20FUNCTION-29
 [85b4]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-EMAIL-20FUNCTION-29
 [6ced]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-NICKNAME-20FUNCTION-29
 [d9d6]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-20CLASS-29
 [05f7]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AUSER-20CLASS-29
 [342f]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3A-2ASEND-CODE-CALLBACK-2A-20-28VARIABLE-29-29
+[0ce2]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3ASEND-CODE-20FUNCTION-29
 [6c07]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SECRET-KEY-2A-20-28VARIABLE-29-29
 [c547]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SITE-KEY-2A-20-28VARIABLE-29-29
+[11c6]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AFORM-CSS-CLASSES-20GENERIC-FUNCTION-29
+[fc5a]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-EMAIL-INPUT-20GENERIC-FUNCTION-29
+[e8ad]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SENT-MESSAGE-20GENERIC-FUNCTION-29
+[1fdc]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SUBMIT-BUTTON-20GENERIC-FUNCTION-29
+[a366]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-20CLASS-29
+[4fbd]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-3AMAKE-CODE-SENDER-20FUNCTION-29
 [fd4e]: https://github.com/fukamachi/mito/commit/be0ea57df921aa1beb2045b50a8c2e2e4f8b8955
 
 * * *
