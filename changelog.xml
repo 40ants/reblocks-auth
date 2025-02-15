@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0">
+    <channel>
+        <title>reblocks-auth-docs ChangeLog</title>
+        <link>https://40ants.com/reblocks-auth/</link>
+        <generator>xml-emitter</generator>
+        <language>en-us</language>
+        <item>
+            <title>0.11.1  (2025-02-15)</title>
+            <description>&lt;h1 id=&quot;fixed&quot;&gt;Fixed&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Email provider form rendering was fixed to work with Reblocks changes introduced in &lt;a href=&quot;https://github.com/40ants/reblocks/pull/57&quot;&gt;PR57&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.11.0  (2023-12-18)</title>
+            <description>&lt;h1 id=&quot;added&quot;&gt;Added&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3ARENDER-LOGIN-PAGE-20GENERIC-FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FCORE-3ARENDER-LOGIN-PAGE-20GENERIC-FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/core:render-login-page&lt;/code&gt;&lt;/a&gt; generic-function was added allowing to make a custom.
+  Widget class &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-20CLASS-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-20CLASS-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/processing:request-code-form&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SUBMIT-BUTTON-20GENERIC-FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SUBMIT-BUTTON-20GENERIC-FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/processing:render-submit-button&lt;/code&gt;&lt;/a&gt; generic-function, &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-EMAIL-INPUT-20GENERIC-FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-EMAIL-INPUT-20GENERIC-FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/processing:render-email-input&lt;/code&gt;&lt;/a&gt; generic-function, &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AFORM-CSS-CLASSES-20GENERIC-FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AFORM-CSS-CLASSES-20GENERIC-FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/processing:form-css-classes&lt;/code&gt;&lt;/a&gt; generic-function and &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SENT-MESSAGE-20GENERIC-FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SENT-MESSAGE-20GENERIC-FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/processing:render-sent-message&lt;/code&gt;&lt;/a&gt; generic-function were added to allow login page customizations.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Added &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3A-2AALLOW-NEW-ACCOUNTS-CREATION-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FCORE-3A-2AALLOW-NEW-ACCOUNTS-CREATION-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/core:*allow-new-accounts-creation*&lt;/code&gt;&lt;/a&gt; variable to control if new accounts can be registered.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Added &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3A-2AUSER-CLASS-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FMODELS-3A-2AUSER-CLASS-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/models:*user-class*&lt;/code&gt;&lt;/a&gt; variable. This allows to make a custom user model with additional fields.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h1 id=&quot;changed&quot;&gt;Changed&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Now when user authenticates using email, we fill email column.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Function &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3ASEND-CODE-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3ASEND-CODE-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/models:send-code&lt;/code&gt;&lt;/a&gt; now accepts &lt;code&gt;SEND-CALLBACK&lt;/code&gt; argument. This argument can be used when you need to send login code with a custom email markup. For example, this way a special welcome email can be sent when a new user was added by a site admin.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Function &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-3AMAKE-CODE-SENDER-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-3AMAKE-CODE-SENDER-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/resend:make-code-sender&lt;/code&gt;&lt;/a&gt; now accepts additional argument &lt;code&gt;BASE-URI&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.10.0  (2023-10-22)</title>
+            <description>&lt;p&gt;Experimental reCaptcha support was added into email provider.&lt;/p&gt;&lt;p&gt;Set &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SITE-KEY-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SITE-KEY-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/processing:*recaptcha-site-key*&lt;/code&gt;&lt;/a&gt;
+and &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SECRET-KEY-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SECRET-KEY-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/processing:*recaptcha-secret-key*&lt;/code&gt;&lt;/a&gt;
+variables to try it.&lt;/p&gt;&lt;p&gt;Note: this version requires a new Reblocks, where was added get-remote-ip function.&lt;/p&gt;</description>
+            <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.9.0  (2023-10-01)</title>
+            <description>&lt;p&gt;Email authentication provider now is able to use Resend &lt;code&gt;API&lt;/code&gt;. Load &lt;code&gt;reblocks-auth/providers/email/resend&lt;/code&gt; &lt;code&gt;ASDF&lt;/code&gt; system to enable this feature.&lt;/p&gt;</description>
+            <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.8.0  (2023-08-04)</title>
+            <description>&lt;p&gt;New authentication provider was added. It will send an authentication &lt;code&gt;URL&lt;/code&gt; to user&apos;s email.&lt;/p&gt;&lt;p&gt;To make it work, you&apos;ll need to add this table to the database:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;&quot;&gt;CREATE TABLE registration_code (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL,
+    valid_until TIMESTAMP NOT NULL,
+    created_at TIMESTAMPTZ,
+    updated_at TIMESTAMPTZ
+);&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After that, do this to enable the auth provider:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;&quot;&gt;(pushnew :email reblocks-auth:*enabled-services*)&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Also, you&apos;ll need to provide credentials for working with Mailgun service. At the moment
+sending email works only via this service, but other methods can be implemented.&lt;/p&gt;&lt;p&gt;If you decide to go with default sending method, define email template like this:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;&quot;&gt;(define-code-sender send-code (&amp;quot;Ultralisp.org &amp;lt;noreply@ultralisp.org&amp;gt;&amp;quot; url)
+  (:p (&amp;quot;To log into [Ultralisp.org](~A), follow [this link](~A).&amp;quot;
+       url
+       url))
+  (:p &amp;quot;Hurry up! This link will expire in one hour.&amp;quot;))&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here is how to provide credentials to make sending work:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;&quot;&gt;(setf mailgun:*domain* &amp;quot;mg.ultralisp.org&amp;quot;)
+
+(setf mailgun:*api-key*
+      (secret-values:conceal-value
+       &amp;quot;********************************-*********-*********&amp;quot;))&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To supply an alternative sending method, define a function of two arguments: email and url.
+Set &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3A-2ASEND-CODE-CALLBACK-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3A-2ASEND-CODE-CALLBACK-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/providers/email/models:*send-code-callback*&lt;/code&gt;&lt;/a&gt; variable to the value
+of this function.&lt;/p&gt;</description>
+            <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.7.0  (2022-06-07)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added documentation and an example application.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.6.0  (2021-01-24)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added support for &lt;code&gt;secret-values&lt;/code&gt; in &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FGITHUB-3A-2ASECRET-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FGITHUB-3A-2ASECRET-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/github:*secret*&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.5.1  (2019-06-24)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Supported recent change &lt;a href=&quot;https://github.com/fukamachi/mito/commit/be0ea57df921aa1beb2045b50a8c2e2e4f8b8955&quot;&gt;of mito&lt;/a&gt;
+caused an error when searching a social user.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Mon, 24 Jun 2019 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.5.0  (2019-06-22)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added a &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3ACHANGE-EMAIL-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FMODELS-3ACHANGE-EMAIL-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/models:change-email&lt;/code&gt;&lt;/a&gt; function.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.4.0  (2019-06-20)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added a new variable &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3A-2ALOGIN-HOOKS-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FCORE-3A-2ALOGIN-HOOKS-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/core:*login-hooks*&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;A variable &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3A-2AENABLED-SERVICES-2A-20-28VARIABLE-29-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FCORE-3A-2AENABLED-SERVICES-2A-20-28VARIABLE-29-29&quot;&gt;&lt;code&gt;reblocks-auth/core:*enabled-services*&lt;/code&gt;&lt;/a&gt; was exported.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;A function &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FCORE-3ARENDER-BUTTONS-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FCORE-3ARENDER-BUTTONS-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/core:render-buttons&lt;/code&gt;&lt;/a&gt; was exported.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.3.0  (2019-04-18)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Now classes &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AUSER-20CLASS-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FMODELS-3AUSER-20CLASS-29&quot;&gt;&lt;code&gt;reblocks-auth/models:user&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-20CLASS-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-20CLASS-29&quot;&gt;&lt;code&gt;reblocks-auth/models:social-profile&lt;/code&gt;&lt;/a&gt; are exported from &lt;code&gt;reblocks-auth/models&lt;/code&gt; system.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;New function were added: &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-EMAIL-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-EMAIL-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/models:get-user-by-email&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-NICKNAME-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-NICKNAME-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/models:get-user-by-nickname&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.2.0  (2019-04-17)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;Now only &lt;code&gt;user:email&lt;/code&gt; scope is required for authentication
+  via github.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;And &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FGITHUB-3ARENDER-BUTTON-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FGITHUB-3ARENDER-BUTTON-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/github:render-button&lt;/code&gt;&lt;/a&gt;, &lt;a href=&quot;https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FGITHUB-3AGET-SCOPES-20FUNCTION-29&quot; data-document=&quot;https://40ants.com/reblocks-auth/&quot; data-node=&quot;x-28REBLOCKS-AUTH-2FGITHUB-3AGET-SCOPES-20FUNCTION-29&quot;&gt;&lt;code&gt;reblocks-auth/github:get-scopes&lt;/code&gt;&lt;/a&gt;
+  functions was added to request more scopes if required.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>0.1.0  (2019-03-31)</title>
+            <description>&lt;ul&gt;&lt;li&gt;&lt;p&gt;First version with GitHub authentication.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+            <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
+        </item>
+    </channel>
+</rss>
