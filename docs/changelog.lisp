@@ -11,6 +11,13 @@
                               "URL"
                               "API"
                               "HTTP"))
+  (0.11.1 2025-02-15
+          "
+Fixed
+=====
+
+- Email provider form rendering was fixed to work with Reblocks changes introduced in [PR57](https://github.com/40ants/reblocks/pull/57).
+")
   (0.11.0 2023-12-18
           "
 Added

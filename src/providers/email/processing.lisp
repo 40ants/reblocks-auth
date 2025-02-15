@@ -7,6 +7,8 @@
                 #:with-html)
   (:import-from #:dexador)
   (:import-from #:log)
+  (:import-from #:reblocks/actions
+                #:*js-default-form-action*)
   (:import-from #:reblocks/widget
                 #:defwidget)
   (:import-from #:reblocks-auth/button)
@@ -130,15 +132,15 @@
                                        (uiop:ensure-list
                                         (form-css-classes widget)))
                         :submit-fn (if *recaptcha-site-key*
-                                       "submitFormWithRecaptcha(\"~A\", $(this), \"~A\")"
-                                       "initiateFormAction(\"~A\", $(this), \"~A\")"))
+                                       "submitFormWithRecaptcha(\"~A\", $(this))"
+                                       *js-default-form-action*))
          (when *recaptcha-site-key*
            (:script :src (format nil "https://www.google.com/recaptcha/api.js?render=~A"
                                  *recaptcha-site-key*))
 
            (:script
             (:raw (format nil "
-      function submitFormWithRecaptcha(actionCode, form, session_arg) {
+      function submitFormWithRecaptcha(actionCode, form) {
         grecaptcha.ready(function() {
           grecaptcha.execute('~A', {action: 'submit'}).then(function(token) {
               var options = {'args': {'recaptcha-token': token}};
