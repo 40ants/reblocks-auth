@@ -16,6 +16,8 @@
                 #:yandex-metrika-code
                 #:*text-color*
                 #:*dark-background*)
+  (:import-from #:reblocks/html
+                #:with-html)
   (:export #:make-page-frame))
 (in-package #:reblocks-auth-example/widgets/frame)
 
@@ -35,7 +37,7 @@
 
 
 (defmethod render ((widget frame-widget))
-  (reblocks/html:with-html
+  (with-html ()
     (:header
      (:div :class "navbar"
            (:div :class "main-logo"

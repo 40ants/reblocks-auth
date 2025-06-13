@@ -84,7 +84,7 @@
                            (text "Grant permissions")
                            (retpath (get-uri)))
   "Renders a button to request more scopes."
-  (with-html
+  (with-html ()
     (let* ((default-redirect (make-default-redirect-uri))
            (redirect-uri (add-retpath-to default-redirect
                                          :retpath retpath))

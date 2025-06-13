@@ -11,6 +11,14 @@
                               "URL"
                               "API"
                               "HTTP"))
+  (0.12.0 2025-06-13
+          "
+Fixed
+=====
+
+- Code was fixed to work with latest changes of with-html macro from the Reblocks.
+
+")
   (0.11.1 2025-02-15
           "
 Fixed

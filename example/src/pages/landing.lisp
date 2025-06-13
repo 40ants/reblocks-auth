@@ -35,7 +35,7 @@
 
 (defmethod render ((widget landing-page))
   (let* ((user (get-current-user)))
-    (with-html
+    (with-html ()
       (cond
         (user
          (let ((profiles (reblocks-auth/models:user-social-profiles user)))
