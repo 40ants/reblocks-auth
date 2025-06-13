@@ -82,7 +82,7 @@
 
    Optionally you can specify RETPATH argument with an URI to return user
    after login."
-  (with-html
+  (with-html ()
     (:div :class "auth-buttons"
           (loop for service in *enabled-services*
                 do (reblocks-auth/button:render service
@@ -127,7 +127,7 @@
                    (log:debug "Redirecting to" retpath)
                    (redirect retpath))
                (unable-to-authenticate (condition)
-                 (with-html
+                 (with-html ()
                    (:p :class "label alert"
                        (get-message condition))
                    (render-login-page (reblocks/app:get-current)
@@ -144,7 +144,7 @@
   (:documentation "By default, renders a list of buttons for each allowed authentication method.")
   (:method ((app t) &key retpath)
 
-    (with-html
+    (with-html ()
       (:h1 "Login with"))
     
     (render-buttons :retpath retpath)))

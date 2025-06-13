@@ -158,7 +158,7 @@
 
 (defgeneric render-sent-message (widget)
   (:method ((widget request-code-form))
-    (with-html
+    (with-html ()
       (:p "A login link was sent to your email.")))
   
   (:method ((widget request-code-form-for-popup))
@@ -174,7 +174,7 @@
 
 (defgeneric render-email-input (widget)
   (:method ((widget request-code-form))
-    (with-html
+    (with-html ()
       (:input :name "email"
               :type "email"
               :placeholder "Email"))))
@@ -182,7 +182,7 @@
 
 (defgeneric render-submit-button (widget)
   (:method ((widget request-code-form))
-    (with-html
+    (with-html ()
       (:input :type "submit"
               :class "button small"
               :value "Send Code"))))
@@ -202,7 +202,7 @@
   (let ((popup (make-instance 'request-code-popup
                               :form (make-instance 'request-code-form-for-popup
                                                    :retpath retpath))))
-    (with-html
+    (with-html ()
       (reblocks/widget:render popup)
 
       (render-form-and-button

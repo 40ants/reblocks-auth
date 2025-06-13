@@ -12,7 +12,7 @@
                    Service should be a keyword like :github or :facebook.")
   (:method ((service t) &key retpath)
     (declare (ignore retpath))
-    (with-html
+    (with-html ()
       (:a :href ""
           :class "button"
           ("Login via Unsupported Service ~A"
