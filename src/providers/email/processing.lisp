@@ -132,7 +132,7 @@
                                        (uiop:ensure-list
                                         (form-css-classes widget)))
                         :submit-fn (if *recaptcha-site-key*
-                                       "submitFormWithRecaptcha(\"~A\", $(this))"
+                                       "return submitFormWithRecaptcha(\"~A\", event, this)"
                                        *js-default-form-action*))
          (when *recaptcha-site-key*
            (:script :src (format nil "https://www.google.com/recaptcha/api.js?render=~A"
@@ -140,13 +140,17 @@
 
            (:script
             (:raw (format nil "
-      function submitFormWithRecaptcha(actionCode, form) {
+      function submitFormWithRecaptcha(actionCode, event, form) {
+        if (event && typeof event.preventDefault === 'function') {
+          event.preventDefault();
+        }
         grecaptcha.ready(function() {
           grecaptcha.execute('~A', {action: 'submit'}).then(function(token) {
               var options = {'args': {'recaptcha-token': token}};
-              initiateFormAction(actionCode, form, options);
+              initiateFormAction(actionCode, event, form, options);
           });
         });
+        return false;
       }
 "
                           *recaptcha-site-key*))))
