@@ -122,10 +122,28 @@ Login processor does two things:
 
 Logout processor renders a \"logout\" button and when user clicks on it, removes user from the current session.
 ")
- 
+
+
+(defsection @example (:title "Example App")
+  "
+I've made an example application to demonstrate how does REBLOCKS-AUTH system work.
+To start this example application, run this code in the REPL:
+
+```
+(asdf:load-system :reblocks-auth-example)
+
+(reblocks-auth-example/server:start :port 8080)
+```
+
+When you'll open the http://localhost:8080/ you will see this simple website:
+
+![](https://storage.yandexcloud.net/40ants-blog-images/reblocks-auth-example.gif)
+
+")
+
 
 (defsection @smartcaptcha (:title "Yandex SmartCaptcha Support")
-   """
+  """
    
    Yandex SmartCaptcha provides an alternative to Google reCAPTCHA for protecting
    the email-based authentication form.
