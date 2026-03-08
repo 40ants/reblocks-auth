@@ -10,7 +10,17 @@
                               "REPL"
                               "URL"
                               "API"
+                              "reCAPTCHA"
                               "HTTP"))
+  (0.13.0 2026-03-08
+          "
+Added
+=====
+
+- Yandex SmartCaptcha support as alternative to Google `reCAPTCHA`.
+- New variables: REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:*SMARTCAPTCHA-CLIENT-KEY* and REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:*SMARTCAPTCHA-SERVER-KEY*.
+- Yandex SmartCaptcha takes precedence when both are configured.
+")
   (0.12.0 2025-06-13
           "
 Fixed
