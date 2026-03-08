@@ -41,6 +41,8 @@
 (defsection @index (:title "reblocks-auth - A system to add an authentication to the Reblocks based web-site."
                     :ignore-words ("JSON"
                                    "HTTP"
+                                   "POST"
+                                   "API"
                                    "TODO"
                                    "URI"
                                    "Unlicense"
