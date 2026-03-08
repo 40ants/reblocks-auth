@@ -19,14 +19,7 @@ Added
 
 - Yandex SmartCaptcha support as alternative to Google `reCAPTCHA`.
 - New variables: REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:*SMARTCAPTCHA-CLIENT-KEY* and REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:*SMARTCAPTCHA-SERVER-KEY*.
-- New function: REBLOCKS-AUTH/PROVIDERS/EMAIL/PROCESSING:VERIFY-SMARTCAPTCHA for token validation.
-
-Changed
-=======
-           
-- Email provider now supports both Google reCAPTCHA and Yandex SmartCaptcha.
 - Yandex SmartCaptcha takes precedence when both are configured.
-- Improved captcha verification error messages.
 ")
   (0.12.0 2025-06-13
           "

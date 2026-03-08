@@ -43,8 +43,7 @@
            #:form-css-classes
            #:render-sent-message
            #:retpath
-           #:sent
-           #:verify-smartcaptcha))
+           #:sent))
 (in-package #:reblocks-auth/providers/email/processing)
 
 
