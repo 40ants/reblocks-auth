@@ -12,6 +12,17 @@
                               "API"
                               "reCAPTCHA"
                               "HTTP"))
+  (0.14.0 2026-03-14
+          "
+Added
+=====
+
+- Telegram authentication provider via the [Telegram Login Widget](https://core.telegram.org/widgets/login).
+- New variables: REBLOCKS-AUTH/PROVIDERS/TELEGRAM:*BOT-USERNAME* and REBLOCKS-AUTH/PROVIDERS/TELEGRAM:*BOT-TOKEN*.
+- Server-side HMAC-SHA256 signature verification using the bot token (via `ironclad`).
+- `auth_date` freshness check — logins older than 24 hours are rejected.
+- REBLOCKS-AUTH/PROVIDERS/TELEGRAM:RENDER-BUTTON helper for rendering the widget script tag.
+")
   (0.13.0 2026-03-08
           "
 Added

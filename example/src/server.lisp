@@ -13,6 +13,7 @@
                 #:app)
   (:import-from #:reblocks-auth/providers/email/mailgun
                 #:define-code-sender)
+  (:import-from #:reblocks-auth/providers/telegram)
   (:shadow #:restart)
   (:export #:start
            #:restart
@@ -53,6 +54,13 @@
   ;; So these secrets are considered not so secret:
   (setf reblocks-auth/github:*client-id* "0708872d1b4baaa2df35")
   (setf reblocks-auth/github:*secret* "fb7e6128a623cf6b8e5abf1178e51a857efe3644")
+
+  ;; To enable Telegram login, set your bot username and token:
+  ;; (setf reblocks-auth/providers/telegram:*bot-username* "YourBotName")
+  ;; (setf reblocks-auth/providers/telegram:*bot-token* "your-bot-token")
+
+  ;; Enable available authentication providers
+  (setf reblocks-auth:*enabled-services* '(:github :telegram :email))
   
   (init-test-db)
 
