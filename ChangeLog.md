@@ -2,6 +2,20 @@
 
 # ChangeLog
 
+<a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E14-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.14.0 (2026-03-14)
+
+<a id="added"></a>
+
+### Added
+
+* Telegram authentication provider via the [Telegram Login Widget][062e].
+* New variables: [`reblocks-auth/providers/telegram:*bot-username*`][17fb] and [`reblocks-auth/providers/telegram:*bot-token*`][ad5b].
+* Server-side `HMAC-SHA256` signature verification using the bot token (via `ironclad`).
+* `auth_date` freshness check — logins older than 24 hours are rejected.
+* [`reblocks-auth/providers/telegram:render-button`][6b8c] helper for rendering the widget script tag.
+
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E13-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.13.0 (2026-03-08)
@@ -203,6 +217,10 @@ caused an error when searching a social user.
 [1fdc]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SUBMIT-BUTTON-20GENERIC-FUNCTION-29
 [a366]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-20CLASS-29
 [4fbd]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-3AMAKE-CODE-SENDER-20FUNCTION-29
+[ad5b]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3A-2ABOT-TOKEN-2A-20-28VARIABLE-29-29
+[17fb]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3A-2ABOT-USERNAME-2A-20-28VARIABLE-29-29
+[6b8c]: https://40ants.com/reblocks-auth/#x-28REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3ARENDER-BUTTON-20FUNCTION-29
+[062e]: https://core.telegram.org/widgets/login
 [fff6]: https://github.com/40ants/reblocks/pull/57
 [fd4e]: https://github.com/fukamachi/mito/commit/be0ea57df921aa1beb2045b50a8c2e2e4f8b8955
 
