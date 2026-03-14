@@ -13,6 +13,7 @@
                "reblocks-auth/github"
                "reblocks-auth/providers/email/processing"
                "reblocks-auth/providers/email/mailgun"
+               "reblocks-auth/providers/telegram"
                "reblocks-auth/models")
   :in-order-to ((test-op (test-op "reblocks-auth-tests"))))
 

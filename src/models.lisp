@@ -119,11 +119,24 @@
 (defun create-social-user (service
                            service-user-id
                            &rest metadata
-                           &key email)
+                           &key
+                           email
+                           first-name
+                           last-name
+                           username
+                           photo-url)
 
   (check-type service-user-id string)
   (check-type email (or string
                         null))
+  (check-type first-name (or string
+                             null))
+  (check-type last-name (or string
+                            null))
+  (check-type username (or string
+                           null))
+  (check-type photo-url (or string
+                            null))
 
   ;; I tried to do this, but then internal user addition does not work
   ;; so we have to disable it on form
