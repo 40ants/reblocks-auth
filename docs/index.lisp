@@ -40,6 +40,8 @@
 
 (defsection @index (:title "reblocks-auth - A system to add an authentication to the Reblocks based web-site."
                     :ignore-words ("JSON"
+                                   "URL"
+                                   "HMAC-SHA256"
                                    "HTTP"
                                    "POST"
                                    "API"
@@ -214,7 +216,7 @@ When you'll open the http://localhost:8080/ you will see this simple website:
 (defsection @smartcaptcha (:title "Yandex SmartCaptcha Support")
   """
    
-   Yandex SmartCaptcha provides an alternative to Google reCAPTCHA for protecting
+   Yandex SmartCaptcha provides an alternative to Google `reCAPTCHA` for protecting
    the email-based authentication form.
    
    ## Quick Start
@@ -247,9 +249,9 @@ When you'll open the http://localhost:8080/ you will see this simple website:
    ## Multiple Captcha Providers
    
    Yandex SmartCaptcha takes precedence when both Yandex SmartCaptcha
-   and Google reCAPTCHA are configured.
+   and Google `reCAPTCHA` are configured.
    
-   If only Google reCAPTCHA is configured, it will be used.
+   If only Google `reCAPTCHA` is configured, it will be used.
    
    ## Verification
    

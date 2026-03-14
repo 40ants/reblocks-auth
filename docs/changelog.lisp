@@ -10,6 +10,7 @@
                               "REPL"
                               "URL"
                               "API"
+                              "HMAC-SHA256"
                               "reCAPTCHA"
                               "HTTP"))
   (0.14.0 2026-03-14
