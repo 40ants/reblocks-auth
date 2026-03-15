@@ -144,7 +144,7 @@
 
 (defun create-social-user (service
                            service-user-id
-                           &rest metadata
+                           &rest kwargs
                            &key
                            email
                            first-name
@@ -172,7 +172,12 @@
   
   (let ((user (mito:create-dao *user-class*
                                :nickname service-user-id
-                               :email email)))
+                               :email email))
+        (metadata (loop with result = (dict)
+                        for (key value) on kwargs by #'cddr
+                        do (setf (gethash (string-downcase key) result)
+                                 value)
+                        finally (return result))))
       
     (mito:create-dao 'social-profile
                      :user user

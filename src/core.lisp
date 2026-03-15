@@ -28,6 +28,8 @@
                 #:get-dependencies)
   (:import-from #:reblocks/app)
   (:import-from #:reblocks/session)
+  (:import-from #:log4cl-extras/error
+                #:with-log-unhandled)
   (:export #:*login-hooks*
            #:*enabled-services*
            #:make-login-processor
@@ -105,27 +107,28 @@
            (let ((params (to-plist (get-parameters)
                                    :without '(:service))))
              (handler-case
-                 (multiple-value-bind (user existing-p)
-                     (apply 'reblocks-auth/auth:authenticate
-                            (keywordify service)
-                            params)
-                   (log:debug "User logged in" user)
+                 (with-log-unhandled ()
+                   (multiple-value-bind (user existing-p)
+                       (apply 'reblocks-auth/auth:authenticate
+                              (keywordify service)
+                              params)
+                     (log:debug "User logged in" user)
 
-                   ;; Если логин удался, то надо вернуть пользователя на главную страницу
-                   (unless existing-p
-                     (reach-goal widget "REGISTERED" :survive-redirect-p t))
+                     ;; Если логин удался, то надо вернуть пользователя на главную страницу
+                     (unless existing-p
+                       (reach-goal widget "REGISTERED" :survive-redirect-p t))
 
-                   ;; Ну и в любом случае, зафиксируем факт логина
-                   (reach-goal widget "LOGGED-IN" :survive-redirect-p t)
+                     ;; Ну и в любом случае, зафиксируем факт логина
+                     (reach-goal widget "LOGGED-IN" :survive-redirect-p t)
 
-                   (setf (get-current-user)
-                         user)
+                     (setf (get-current-user)
+                           user)
 
-                   (loop for hook in *login-hooks*
-                         do (funcall hook user))
+                     (loop for hook in *login-hooks*
+                           do (funcall hook user))
 
-                   (log:debug "Redirecting to" retpath)
-                   (redirect retpath))
+                     (log:debug "Redirecting to" retpath)
+                     (redirect retpath)))
                (unable-to-authenticate (condition)
                  (with-html ()
                    (:p :class "label alert"
@@ -151,10 +154,11 @@
 
 
 (defmethod render ((widget logout-processor))
-  (let ((retpath (or (get-parameter "retpath")
-                     "/")))
-    (reblocks/session:reset)
-    (redirect retpath)))
+  (with-log-unhandled ()
+    (let ((retpath (or (get-parameter "retpath")
+                       "/")))
+      (reblocks/session:reset)
+      (redirect retpath))))
 
 
 (defmethod get-dependencies ((widget login-processor))
