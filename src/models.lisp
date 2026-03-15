@@ -1,7 +1,7 @@
 (uiop:define-package #:reblocks-auth/models
   (:use #:cl)
-  (:import-from #:jonathan)
   (:import-from #:reblocks/session)
+  (:import-from #:yason)
   (:import-from #:alexandria
                 #:make-keyword)
   (:import-from #:mito
