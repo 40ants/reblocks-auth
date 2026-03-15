@@ -2,6 +2,16 @@
 
 # ChangeLog
 
+<a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E15-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.15.1 (2026-03-15)
+
+<a id="fixed"></a>
+
+### Fixed
+
+Fixed metadata dictionary saving.
+
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E15-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.15.0 (2026-03-15)
