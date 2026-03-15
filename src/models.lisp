@@ -12,6 +12,8 @@
                 #:create-dao)
   (:import-from #:reblocks-auth/errors
                 #:nickname-is-not-available)
+  (:import-from #:serapeum
+                #:dict)
   (:export #:find-social-user
            #:create-social-user
            #:user
@@ -56,6 +58,32 @@
   "Allows to redefine a model, for users to be created by the reblocks-auth.")
 
 
+(defun deflate-metadata (data)
+  (yason:with-output-to-string* ()
+    (yason:encode
+     (typecase data
+       (list (loop with result = (dict)
+                   for (key value) on data by #'cddr
+                   do (setf (gethash (string-downcase key) result)
+                            value)
+                   finally (return result)))
+       (hash-table (loop with result = (dict)
+                         for key being the hash-key of data
+                           using (hash-value value)
+                         do (setf (gethash (string-downcase key) result)
+                                  value)
+                         finally (return result)))))))
+
+
+(defun inflate-metadata (text)
+  (yason:parse text
+               :json-arrays-as-vectors t
+               ;; It will be impossible to distinguish null and false if we don't
+               ;; pass this argument.
+               ;; But booleans will become NIL and T
+               :json-nulls-as-keyword t))
+
+
 (defclass social-profile ()
   ;; TODO: I need to understand how to make MITO use *user-class* instead of 'user here:
   ((user :col-type user
@@ -75,14 +103,12 @@
                     :initarg :service-user-id
                     :reader profile-service-user-id)
    (metadata :col-type :jsonb
+             :type hash-table
              :initarg :params
              :accessor profile-metadata
-             :deflate #'jonathan:to-json
-             :inflate (lambda (text)
-                        (jonathan:parse
-                         ;; Jonathan for some reason is unable to work with
-                         ;; `base-string' type, returned by database
-                         (coerce text 'simple-base-string)))))
+             :documentation "A hash table with lowercased strings as a key and values given from the authentication plroviders.s"
+             :deflate #'deflate-metadata
+             :inflate #'inflate-metadata))
   (:documentation "Represents a User's link to a social service.
                    User can be bound to multiple social services.")
   (:unique-keys (user-id service service-user-id))
