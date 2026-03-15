@@ -10,6 +10,7 @@
                               "REPL"
                               "URL"
                               "JSON"
+                              "SQL"
                               "API"
                               "HMAC-SHA256"
                               "reCAPTCHA"
