@@ -9,8 +9,7 @@
   (:import-from #:reblocks-auth/providers/email/processing
                 #:verify-smartcaptcha
                 #:*smartcaptcha-server-key*
-                #:*smartcaptcha-client-key*)
-  (:import-from #:flexi-streams))
+                #:*smartcaptcha-client-key*))
 (in-package #:reblocks-auth-tests/providers/email/processing)
 
 
