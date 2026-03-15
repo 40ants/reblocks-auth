@@ -2,6 +2,34 @@
 
 # ChangeLog
 
+<a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E15-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.15.0 (2026-03-15)
+
+<a id="backward-incompatible-changes"></a>
+
+### Backward incompatible changes
+
+Metadata serialization was fixed for cases when some strings are having umlauts.
+Also, Yason library now is used instead of Jonathon for handling `JSON`. As the result,
+metadata now is returned as a hash-table with string keys.
+
+Another backward incompatiblity is that now all metadata keys are lowercased on saving.
+To update old records in the database, use such `SQL` query:
+
+```sql
+UPDATE social_profile
+SET metadata = 
+    (metadata - 'EMAIL') || 
+    jsonb_build_object(
+        'email', 
+        CASE 
+            WHEN metadata->'EMAIL' = '[]'::jsonb THEN NULL
+            ELSE metadata->'EMAIL'
+        END
+    )
+WHERE metadata ? 'EMAIL';
+```
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E14-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.14.0 (2026-03-14)
