@@ -15,6 +15,13 @@
                               "HMAC-SHA256"
                               "reCAPTCHA"
                               "HTTP"))
+  (0.15.1 2026-03-15
+          "
+Fixed
+=====
+
+Fixed metadata dictionary saving.
+")
   (0.15.0 2026-03-15
           "
 Backward incompatible changes
