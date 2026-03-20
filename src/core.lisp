@@ -8,6 +8,7 @@
   (:import-from #:reblocks/response
                 #:redirect)
   (:import-from #:reblocks/request
+                #:get-path
                 #:get-parameters
                 #:get-parameter)
   (:import-from #:reblocks/widget
@@ -79,7 +80,7 @@
     (log:debug "Goal" goal-name "was reached")))
 
 
-(defun render-buttons (&key retpath)
+(defun render-buttons (&key (retpath (get-path)))
   "Renders a row of buttons for enabled service providers.
 
    Optionally you can specify RETPATH argument with an URI to return user

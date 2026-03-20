@@ -15,6 +15,14 @@
                               "HMAC-SHA256"
                               "reCAPTCHA"
                               "HTTP"))
+  (0.16.0 2026-03-21
+          "
+Backward incompatible changes
+=============================
+
+Now function REBLOCKS-AUTH/CORE:RENDER-BUTTONS accepts current-page's path as a RETPATH argument by default.
+Usually this is what you expect - to return to the same page after the login.
+")
   (0.15.1 2026-03-15
           "
 Fixed
