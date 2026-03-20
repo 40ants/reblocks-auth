@@ -2,6 +2,17 @@
 
 # ChangeLog
 
+<a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E16-2E0-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
+
+## 0.16.0 (2026-03-21)
+
+<a id="backward-incompatible-changes"></a>
+
+### Backward incompatible changes
+
+Now function [`reblocks-auth/core:render-buttons`][69ac] accepts current-page's path as a `RETPATH` argument by default.
+Usually this is what you expect - to return to the same page after the login.
+
 <a id="x-28REBLOCKS-AUTH-DOCS-2FCHANGELOG-3A-3A-7C0-2E15-2E1-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
 ## 0.15.1 (2026-03-15)

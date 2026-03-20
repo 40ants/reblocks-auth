@@ -228,7 +228,7 @@ Failed validation returns `{"status": "error"}`.
 
 <a id="x-28-23A-28-2818-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FAUTH-22-29-20PACKAGE-29"></a>
 
-#### [package](a19b) `reblocks-auth/auth`
+#### [package](0581) `reblocks-auth/auth`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FAUTH-3FGenerics-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -236,7 +236,7 @@ Failed validation returns `{"status": "error"}`.
 
 <a id="x-28REBLOCKS-AUTH-2FAUTH-3AAUTHENTICATE-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](bdc1) `reblocks-auth/auth:authenticate` service &rest params &key id first\_name last\_name username photo\_url auth\_date hash retpath code
+##### [generic-function](6015) `reblocks-auth/auth:authenticate` service &rest params &key id first\_name last\_name username photo\_url auth\_date hash retpath code
 
 Called when user had authenticated in the service and returned
 to our site.
@@ -251,7 +251,7 @@ Should return two values a user and a flag denotifing if user was just created.
 
 <a id="x-28-23A-28-2820-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FBUTTON-22-29-20PACKAGE-29"></a>
 
-#### [package](57a1) `reblocks-auth/button`
+#### [package](c1b8) `reblocks-auth/button`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FBUTTON-3FGenerics-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -259,7 +259,7 @@ Should return two values a user and a flag denotifing if user was just created.
 
 <a id="x-28REBLOCKS-AUTH-2FBUTTON-3ARENDER-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](b35d) `reblocks-auth/button:render` service &key retpath
+##### [generic-function](b152) `reblocks-auth/button:render` service &key retpath
 
 Renders a button for given service.
 Service should be a keyword like :github or :facebook.
@@ -270,7 +270,7 @@ Service should be a keyword like :github or :facebook.
 
 <a id="x-28-23A-28-2824-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FCONDITIONS-22-29-20PACKAGE-29"></a>
 
-#### [package](e800) `reblocks-auth/conditions`
+#### [package](edb7) `reblocks-auth/conditions`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FCONDITIONS-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -282,17 +282,17 @@ Service should be a keyword like :github or :facebook.
 
 <a id="x-28REBLOCKS-AUTH-2FCONDITIONS-3AUNABLE-TO-AUTHENTICATE-20CONDITION-29"></a>
 
-###### [condition](f712) `reblocks-auth/conditions:unable-to-authenticate` ()
+###### [condition](5529) `reblocks-auth/conditions:unable-to-authenticate` ()
 
 **Readers**
 
 <a id="x-28REBLOCKS-AUTH-2FCONDITIONS-3AGET-MESSAGE-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FCONDITIONS-3AUNABLE-TO-AUTHENTICATE-29-29"></a>
 
-###### [reader](f712) `reblocks-auth/conditions:get-message` (unable-to-authenticate) (:message)
+###### [reader](5529) `reblocks-auth/conditions:get-message` (unable-to-authenticate) (:message)
 
 <a id="x-28REBLOCKS-AUTH-2FCONDITIONS-3AGET-REASON-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FCONDITIONS-3AUNABLE-TO-AUTHENTICATE-29-29"></a>
 
-###### [reader](f712) `reblocks-auth/conditions:get-reason` (unable-to-authenticate) (:reason = 'nil)
+###### [reader](5529) `reblocks-auth/conditions:get-reason` (unable-to-authenticate) (:reason = 'nil)
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-40REBLOCKS-AUTH-2FCORE-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -300,7 +300,7 @@ Service should be a keyword like :github or :facebook.
 
 <a id="x-28-23A-28-2818-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FCORE-22-29-20PACKAGE-29"></a>
 
-#### [package](68a9) `reblocks-auth/core`
+#### [package](cccd) `reblocks-auth/core`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FCORE-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -312,7 +312,7 @@ Service should be a keyword like :github or :facebook.
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3ALOGIN-PROCESSOR-20CLASS-29"></a>
 
-###### [class](1b2b) `reblocks-auth/core:login-processor` (widget)
+###### [class](1784) `reblocks-auth/core:login-processor` (widget)
 
 This widget should be rendered to process user's login.
 
@@ -322,7 +322,7 @@ This widget should be rendered to process user's login.
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3ALOGOUT-PROCESSOR-20CLASS-29"></a>
 
-###### [class](bf9d) `reblocks-auth/core:logout-processor` (widget)
+###### [class](0f9f) `reblocks-auth/core:logout-processor` (widget)
 
 This widget should be rendered to process user's logout.
 
@@ -332,7 +332,7 @@ This widget should be rendered to process user's logout.
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3ARENDER-LOGIN-PAGE-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](b9e0) `reblocks-auth/core:render-login-page` app &key retpath
+##### [generic-function](50d4) `reblocks-auth/core:render-login-page` app &key retpath
 
 By default, renders a list of buttons for each allowed authentication method.
 
@@ -342,15 +342,15 @@ By default, renders a list of buttons for each allowed authentication method.
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3AMAKE-LOGIN-PROCESSOR-20FUNCTION-29"></a>
 
-##### [function](fe4e) `reblocks-auth/core:make-login-processor`
+##### [function](bb71) `reblocks-auth/core:make-login-processor`
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3AMAKE-LOGOUT-PROCESSOR-20FUNCTION-29"></a>
 
-##### [function](2d70) `reblocks-auth/core:make-logout-processor`
+##### [function](8cc5) `reblocks-auth/core:make-logout-processor`
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3ARENDER-BUTTONS-20FUNCTION-29"></a>
 
-##### [function](6162) `reblocks-auth/core:render-buttons` &key retpath
+##### [function](e5a1) `reblocks-auth/core:render-buttons` &key (retpath (get-path))
 
 Renders a row of buttons for enabled service providers.
 
@@ -363,19 +363,19 @@ after login.
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3A-2AALLOW-NEW-ACCOUNTS-CREATION-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](c8be) `reblocks-auth/core:*allow-new-accounts-creation*` t
+##### [variable](0f49) `reblocks-auth/core:*allow-new-accounts-creation*` t
 
 When True, a new account will be created. Otherwise only already existing users can log in.
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3A-2AENABLED-SERVICES-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](425d) `reblocks-auth/core:*enabled-services*` (:github)
+##### [variable](9d92) `reblocks-auth/core:*enabled-services*` (:github)
 
 Set this variable to limit a services available to login through.
 
 <a id="x-28REBLOCKS-AUTH-2FCORE-3A-2ALOGIN-HOOKS-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](f51a) `reblocks-auth/core:*login-hooks*` nil
+##### [variable](85b3) `reblocks-auth/core:*login-hooks*` nil
 
 Append a funcallable handlers which accept single argument - logged user.
 
@@ -385,7 +385,7 @@ Append a funcallable handlers which accept single argument - logged user.
 
 <a id="x-28-23A-28-2820-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FERRORS-22-29-20PACKAGE-29"></a>
 
-#### [package](7117) `reblocks-auth/errors`
+#### [package](2b66) `reblocks-auth/errors`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FERRORS-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -397,7 +397,7 @@ Append a funcallable handlers which accept single argument - logged user.
 
 <a id="x-28REBLOCKS-AUTH-2FERRORS-3ANICKNAME-IS-NOT-AVAILABLE-20CONDITION-29"></a>
 
-###### [condition](cb84) `reblocks-auth/errors:nickname-is-not-available` (error)
+###### [condition](1377) `reblocks-auth/errors:nickname-is-not-available` (error)
 
 Signalled when there is already a user with given nickname.
 
@@ -407,7 +407,7 @@ Signalled when there is already a user with given nickname.
 
 <a id="x-28-23A-28-2820-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FGITHUB-22-29-20PACKAGE-29"></a>
 
-#### [package](4162) `reblocks-auth/github`
+#### [package](036a) `reblocks-auth/github`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FGITHUB-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -415,19 +415,19 @@ Signalled when there is already a user with given nickname.
 
 <a id="x-28REBLOCKS-AUTH-2FGITHUB-3AGET-SCOPES-20FUNCTION-29"></a>
 
-##### [function](870d) `reblocks-auth/github:get-scopes`
+##### [function](7ce8) `reblocks-auth/github:get-scopes`
 
 Returns current user's scopes.
 
 <a id="x-28REBLOCKS-AUTH-2FGITHUB-3AGET-TOKEN-20FUNCTION-29"></a>
 
-##### [function](c511) `reblocks-auth/github:get-token`
+##### [function](c9c4) `reblocks-auth/github:get-token`
 
 Returns current user's GitHub token.
 
 <a id="x-28REBLOCKS-AUTH-2FGITHUB-3ARENDER-BUTTON-20FUNCTION-29"></a>
 
-##### [function](b335) `reblocks-auth/github:render-button` &KEY (CLASS "button small") (SCOPES \*DEFAULT-SCOPES\*) (TEXT "Grant permissions") (RETPATH (GET-URI))
+##### [function](fdf4) `reblocks-auth/github:render-button` &KEY (CLASS "button small") (SCOPES \*DEFAULT-SCOPES\*) (TEXT "Grant permissions") (RETPATH (GET-URI))
 
 Renders a button to request more scopes.
 
@@ -437,19 +437,19 @@ Renders a button to request more scopes.
 
 <a id="x-28REBLOCKS-AUTH-2FGITHUB-3A-2ACLIENT-ID-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](9d31) `reblocks-auth/github:*client-id*` nil
+##### [variable](7d39) `reblocks-auth/github:*client-id*` nil
 
 `OA`uth client id
 
 <a id="x-28REBLOCKS-AUTH-2FGITHUB-3A-2ADEFAULT-SCOPES-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](3e2b) `reblocks-auth/github:*default-scopes*` ("user:email")
+##### [variable](cb73) `reblocks-auth/github:*default-scopes*` ("user:email")
 
 A listo of default scopes to request from GitHub.
 
 <a id="x-28REBLOCKS-AUTH-2FGITHUB-3A-2ASECRET-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](f860) `reblocks-auth/github:*secret*` nil
+##### [variable](90a6) `reblocks-auth/github:*secret*` nil
 
 `OA`uth secret. It might be a string or secret-values:secret-value.
 
@@ -459,7 +459,7 @@ A listo of default scopes to request from GitHub.
 
 <a id="x-28-23A-28-2820-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FMODELS-22-29-20PACKAGE-29"></a>
 
-#### [package](985c) `reblocks-auth/models`
+#### [package](a663) `reblocks-auth/models`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FMODELS-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -471,7 +471,7 @@ A listo of default scopes to request from GitHub.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-20CLASS-29"></a>
 
-###### [class](e21a) `reblocks-auth/models:social-profile` (serial-pk-mixin dao-class record-timestamps-mixin)
+###### [class](b502) `reblocks-auth/models:social-profile` (serial-pk-mixin dao-class record-timestamps-mixin)
 
 Represents a User's link to a social service.
 User can be bound to multiple social services.
@@ -480,17 +480,17 @@ User can be bound to multiple social services.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3APROFILE-METADATA-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-29-29"></a>
 
-###### [reader](afb4) `reblocks-auth/models:profile-metadata` (social-profile) (:metadata :params)
+###### [reader](1cbc) `reblocks-auth/models:profile-metadata` (social-profile) (:metadata :params)
 
 A hash table with lowercased strings as a key and values given from the authentication plroviders.s
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3APROFILE-SERVICE-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-29-29"></a>
 
-###### [reader](91ea) `reblocks-auth/models:profile-service` (social-profile) (:service)
+###### [reader](f523) `reblocks-auth/models:profile-service` (social-profile) (:service)
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3APROFILE-SERVICE-USER-ID-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-29-29"></a>
 
-###### [reader](d5a4) `reblocks-auth/models:profile-service-user-id` (social-profile) (:service-user-id)
+###### [reader](d1da) `reblocks-auth/models:profile-service-user-id` (social-profile) (:service-user-id)
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3APROFILE-USER-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-29-29"></a>
 
@@ -502,7 +502,7 @@ A [`user`][05f7] instance, bound to the [`social-profile`][d9d6].
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3APROFILE-METADATA-20-2840ANTS-DOC-2FLOCATIVES-3AACCESSOR-20REBLOCKS-AUTH-2FMODELS-3ASOCIAL-PROFILE-29-29"></a>
 
-###### [accessor](afb4) `reblocks-auth/models:profile-metadata` (social-profile) (:metadata :params)
+###### [accessor](1cbc) `reblocks-auth/models:profile-metadata` (social-profile) (:metadata :params)
 
 A hash table with lowercased strings as a key and values given from the authentication plroviders.s
 
@@ -512,7 +512,7 @@ A hash table with lowercased strings as a key and values given from the authenti
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AUSER-20CLASS-29"></a>
 
-###### [class](7750) `reblocks-auth/models:user` (serial-pk-mixin dao-class record-timestamps-mixin)
+###### [class](8fc9) `reblocks-auth/models:user` (serial-pk-mixin dao-class record-timestamps-mixin)
 
 This class stores basic information about user - it's nickname and email.
 Additional information is stored inside [`social-profile`][d9d6] instances.
@@ -521,11 +521,11 @@ Additional information is stored inside [`social-profile`][d9d6] instances.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AGET-EMAIL-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FMODELS-3AUSER-29-29"></a>
 
-###### [reader](dcef) `reblocks-auth/models:get-email` (user) (:email = nil)
+###### [reader](69ec) `reblocks-auth/models:get-email` (user) (:email = nil)
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AGET-NICKNAME-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FMODELS-3AUSER-29-29"></a>
 
-###### [reader](61e8) `reblocks-auth/models:get-nickname` (user) (:nickname)
+###### [reader](83c8) `reblocks-auth/models:get-nickname` (user) (:nickname)
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FMODELS-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -533,51 +533,51 @@ Additional information is stored inside [`social-profile`][d9d6] instances.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AANONYMOUS-P-20FUNCTION-29"></a>
 
-##### [function](33d2) `reblocks-auth/models:anonymous-p` user
+##### [function](a2a8) `reblocks-auth/models:anonymous-p` user
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3ACHANGE-EMAIL-20FUNCTION-29"></a>
 
-##### [function](9e91) `reblocks-auth/models:change-email` user email
+##### [function](b39f) `reblocks-auth/models:change-email` user email
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3ACHANGE-NICKNAME-20FUNCTION-29"></a>
 
-##### [function](306f) `reblocks-auth/models:change-nickname` new-nickname
+##### [function](04cc) `reblocks-auth/models:change-nickname` new-nickname
 
 Changes nickname of the current user.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3ACREATE-SOCIAL-USER-20FUNCTION-29"></a>
 
-##### [function](491d) `reblocks-auth/models:create-social-user` service service-user-id &rest kwargs &key email first-name last-name username photo-url
+##### [function](d03f) `reblocks-auth/models:create-social-user` service service-user-id &rest kwargs &key email first-name last-name username photo-url
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AFIND-SOCIAL-USER-20FUNCTION-29"></a>
 
-##### [function](37fd) `reblocks-auth/models:find-social-user` service service-user-id
+##### [function](4dd4) `reblocks-auth/models:find-social-user` service service-user-id
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AGET-ALL-USERS-20FUNCTION-29"></a>
 
-##### [function](0ee3) `reblocks-auth/models:get-all-users`
+##### [function](d3d1) `reblocks-auth/models:get-all-users`
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AGET-CURRENT-USER-20FUNCTION-29"></a>
 
-##### [function](d703) `reblocks-auth/models:get-current-user`
+##### [function](c26c) `reblocks-auth/models:get-current-user`
 
 Returns current user or `NIL`.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-EMAIL-20FUNCTION-29"></a>
 
-##### [function](5d4a) `reblocks-auth/models:get-user-by-email` email
+##### [function](2e03) `reblocks-auth/models:get-user-by-email` email
 
 Returns a user with given email.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AGET-USER-BY-NICKNAME-20FUNCTION-29"></a>
 
-##### [function](9553) `reblocks-auth/models:get-user-by-nickname` nickname
+##### [function](48bc) `reblocks-auth/models:get-user-by-nickname` nickname
 
 Returns a user with given email.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3AUSER-SOCIAL-PROFILES-20FUNCTION-29"></a>
 
-##### [function](d1f5) `reblocks-auth/models:user-social-profiles` user
+##### [function](7d3e) `reblocks-auth/models:user-social-profiles` user
 
 Returns a list of social profiles, bound to the user.
 
@@ -587,7 +587,7 @@ Returns a list of social profiles, bound to the user.
 
 <a id="x-28REBLOCKS-AUTH-2FMODELS-3A-2AUSER-CLASS-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](b4c9) `reblocks-auth/models:*user-class*` user
+##### [variable](5a03) `reblocks-auth/models:*user-class*` user
 
 Allows to redefine a model, for users to be created by the reblocks-auth.
 
@@ -597,7 +597,7 @@ Allows to redefine a model, for users to be created by the reblocks-auth.
 
 <a id="x-28-23A-28-2837-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMAILGUN-22-29-20PACKAGE-29"></a>
 
-#### [package](c6c3) `reblocks-auth/providers/email/mailgun`
+#### [package](f9eb) `reblocks-auth/providers/email/mailgun`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMAILGUN-3FMacros-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -605,7 +605,7 @@ Allows to redefine a model, for users to be created by the reblocks-auth.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMAILGUN-3ADEFINE-CODE-SENDER-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](b1f7) `reblocks-auth/providers/email/mailgun:define-code-sender` NAME (FROM-EMAIL URL-VAR &KEY (SUBJECT "Authentication code")) &BODY HTML-TEMPLATE-BODY
+##### [macro](a6fd) `reblocks-auth/providers/email/mailgun:define-code-sender` NAME (FROM-EMAIL URL-VAR &KEY (SUBJECT "Authentication code")) &BODY HTML-TEMPLATE-BODY
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-40REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -613,7 +613,7 @@ Allows to redefine a model, for users to be created by the reblocks-auth.
 
 <a id="x-28-23A-28-2836-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-22-29-20PACKAGE-29"></a>
 
-#### [package](429f) `reblocks-auth/providers/email/models`
+#### [package](b94c) `reblocks-auth/providers/email/models`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -625,7 +625,7 @@ Allows to redefine a model, for users to be created by the reblocks-auth.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3AREGISTRATION-CODE-20CLASS-29"></a>
 
-###### [class](219f) `reblocks-auth/providers/email/models:registration-code` (serial-pk-mixin dao-class record-timestamps-mixin)
+###### [class](6cf4) `reblocks-auth/providers/email/models:registration-code` (serial-pk-mixin dao-class record-timestamps-mixin)
 
 This model stores a code sent to an email for signup or log in.
 
@@ -633,17 +633,17 @@ This model stores a code sent to an email for signup or log in.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3AREGISTRATION-CODE-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3AREGISTRATION-CODE-29-29"></a>
 
-###### [reader](bb3a) `reblocks-auth/providers/email/models:registration-code` (registration-code) (:code)
+###### [reader](50a1) `reblocks-auth/providers/email/models:registration-code` (registration-code) (:code)
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3AREGISTRATION-EMAIL-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3AREGISTRATION-CODE-29-29"></a>
 
-###### [reader](15c9) `reblocks-auth/providers/email/models:registration-email` (registration-code) (:email)
+###### [reader](74dd) `reblocks-auth/providers/email/models:registration-email` (registration-code) (:email)
 
 User's email.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3AVALID-UNTIL-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3AREGISTRATION-CODE-29-29"></a>
 
-###### [reader](e82d) `reblocks-auth/providers/email/models:valid-until` (registration-code) (:valid-until)
+###### [reader](3dea) `reblocks-auth/providers/email/models:valid-until` (registration-code) (:valid-until)
 
 Expiration time.
 
@@ -653,7 +653,7 @@ Expiration time.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3ASEND-CODE-20FUNCTION-29"></a>
 
-##### [function](9a6c) `reblocks-auth/providers/email/models:send-code` email &key retpath send-callback
+##### [function](11c8) `reblocks-auth/providers/email/models:send-code` email &key retpath send-callback
 
 Usually you should define a global callback using
 [`reblocks-auth/providers/email/mailgun:define-code-sender`][f455] macro,
@@ -666,7 +666,7 @@ email sending.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FMODELS-3A-2ASEND-CODE-CALLBACK-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](4a09) `reblocks-auth/providers/email/models:*send-code-callback*` -unbound-
+##### [variable](a4c8) `reblocks-auth/providers/email/models:*send-code-callback*` -unbound-
 
 Set this variable to a function of one argument of class [`registration-code`][1573].
 It should send a registration code using template, suitable for your website.
@@ -677,7 +677,7 @@ It should send a registration code using template, suitable for your website.
 
 <a id="x-28-23A-28-2840-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-22-29-20PACKAGE-29"></a>
 
-#### [package](3965) `reblocks-auth/providers/email/processing`
+#### [package](d544) `reblocks-auth/providers/email/processing`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3FClasses-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -689,23 +689,23 @@ It should send a registration code using template, suitable for your website.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-20CLASS-29"></a>
 
-###### [class](148d) `reblocks-auth/providers/email/processing:request-code-form` (widget)
+###### [class](5009) `reblocks-auth/providers/email/processing:request-code-form` (widget)
 
 **Readers**
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARETPATH-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-29-29"></a>
 
-###### [reader](e214) `reblocks-auth/providers/email/processing:retpath` (request-code-form) (:retpath)
+###### [reader](0718) `reblocks-auth/providers/email/processing:retpath` (request-code-form) (:retpath)
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ASENT-20-2840ANTS-DOC-2FLOCATIVES-3AREADER-20REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-29-29"></a>
 
-###### [reader](26a5) `reblocks-auth/providers/email/processing:sent` (request-code-form) (= nil)
+###### [reader](c330) `reblocks-auth/providers/email/processing:sent` (request-code-form) (= nil)
 
 **Accessors**
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ASENT-20-2840ANTS-DOC-2FLOCATIVES-3AACCESSOR-20REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AREQUEST-CODE-FORM-29-29"></a>
 
-###### [accessor](26a5) `reblocks-auth/providers/email/processing:sent` (request-code-form) (= nil)
+###### [accessor](c330) `reblocks-auth/providers/email/processing:sent` (request-code-form) (= nil)
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3FGenerics-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -713,19 +713,19 @@ It should send a registration code using template, suitable for your website.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3AFORM-CSS-CLASSES-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](961d) `reblocks-auth/providers/email/processing:form-css-classes` widget
+##### [generic-function](8599) `reblocks-auth/providers/email/processing:form-css-classes` widget
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-EMAIL-INPUT-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](b4e0) `reblocks-auth/providers/email/processing:render-email-input` widget
+##### [generic-function](9c4f) `reblocks-auth/providers/email/processing:render-email-input` widget
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SENT-MESSAGE-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](5422) `reblocks-auth/providers/email/processing:render-sent-message` widget
+##### [generic-function](0c01) `reblocks-auth/providers/email/processing:render-sent-message` widget
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3ARENDER-SUBMIT-BUTTON-20GENERIC-FUNCTION-29"></a>
 
-##### [generic-function](47c0) `reblocks-auth/providers/email/processing:render-submit-button` widget
+##### [generic-function](f07b) `reblocks-auth/providers/email/processing:render-submit-button` widget
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3FVariables-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -733,25 +733,25 @@ It should send a registration code using template, suitable for your website.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SECRET-KEY-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](5c02) `reblocks-auth/providers/email/processing:*recaptcha-secret-key*` nil
+##### [variable](abcf) `reblocks-auth/providers/email/processing:*recaptcha-secret-key*` nil
 
 Set this variable to a secret key, generated by Google reCaptcha.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ARECAPTCHA-SITE-KEY-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](625c) `reblocks-auth/providers/email/processing:*recaptcha-site-key*` nil
+##### [variable](b9e7) `reblocks-auth/providers/email/processing:*recaptcha-site-key*` nil
 
 Set this variable to a site key, generated by Google reCaptcha.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ASMARTCAPTCHA-CLIENT-KEY-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](6084) `reblocks-auth/providers/email/processing:*smartcaptcha-client-key*` nil
+##### [variable](a975) `reblocks-auth/providers/email/processing:*smartcaptcha-client-key*` nil
 
 Set this variable to a client key, generated by Yandex SmartCaptcha.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FPROCESSING-3A-2ASMARTCAPTCHA-SERVER-KEY-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](e899) `reblocks-auth/providers/email/processing:*smartcaptcha-server-key*` nil
+##### [variable](94b4) `reblocks-auth/providers/email/processing:*smartcaptcha-server-key*` nil
 
 Set this variable to a server key, generated by Yandex SmartCaptcha.
 
@@ -761,7 +761,7 @@ Set this variable to a server key, generated by Yandex SmartCaptcha.
 
 <a id="x-28-23A-28-2836-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-22-29-20PACKAGE-29"></a>
 
-#### [package](0027) `reblocks-auth/providers/email/resend`
+#### [package](d178) `reblocks-auth/providers/email/resend`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -769,7 +769,7 @@ Set this variable to a server key, generated by Yandex SmartCaptcha.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-3AMAKE-CODE-SENDER-20FUNCTION-29"></a>
 
-##### [function](b3d9) `reblocks-auth/providers/email/resend:make-code-sender` thunk &key base-uri
+##### [function](db97) `reblocks-auth/providers/email/resend:make-code-sender` thunk &key base-uri
 
 Makes a function which will prepare params and call `THUNK` function with email and `URL`.
 
@@ -781,7 +781,7 @@ Usually you don't need to call this function directly and you can use just [`def
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FEMAIL-2FRESEND-3ADEFINE-CODE-SENDER-20-2840ANTS-DOC-2FLOCATIVES-3AMACRO-29-29"></a>
 
-##### [macro](c1b2) `reblocks-auth/providers/email/resend:define-code-sender` NAME (FROM-EMAIL URL-VAR &KEY (SUBJECT "Authentication code")) &BODY HTML-TEMPLATE-BODY
+##### [macro](ffa3) `reblocks-auth/providers/email/resend:define-code-sender` NAME (FROM-EMAIL URL-VAR &KEY (SUBJECT "Authentication code")) &BODY HTML-TEMPLATE-BODY
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-40REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3FPACKAGE-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -789,7 +789,7 @@ Usually you don't need to call this function directly and you can use just [`def
 
 <a id="x-28-23A-28-2832-29-20BASE-CHAR-20-2E-20-22REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-22-29-20PACKAGE-29"></a>
 
-#### [package](5ca6) `reblocks-auth/providers/telegram`
+#### [package](af4f) `reblocks-auth/providers/telegram`
 
 <a id="x-28REBLOCKS-AUTH-DOCS-2FINDEX-3A-3A-7C-40REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3FFunctions-SECTION-7C-2040ANTS-DOC-2FLOCATIVES-3ASECTION-29"></a>
 
@@ -797,7 +797,7 @@ Usually you don't need to call this function directly and you can use just [`def
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3ARENDER-BUTTON-20FUNCTION-29"></a>
 
-##### [function](af99) `reblocks-auth/providers/telegram:render-button` &key retpath
+##### [function](d1ac) `reblocks-auth/providers/telegram:render-button` &key retpath
 
 Renders the Telegram Login Widget script tag.
 
@@ -807,14 +807,14 @@ Renders the Telegram Login Widget script tag.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3A-2ABOT-TOKEN-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](cace) `reblocks-auth/providers/telegram:*bot-token*` nil
+##### [variable](f9c9) `reblocks-auth/providers/telegram:*bot-token*` nil
 
 Telegram bot token used to verify authentication data.
 Can be a string or secret-values:secret-value.
 
 <a id="x-28REBLOCKS-AUTH-2FPROVIDERS-2FTELEGRAM-3A-2ABOT-USERNAME-2A-20-28VARIABLE-29-29"></a>
 
-##### [variable](dcb8) `reblocks-auth/providers/telegram:*bot-username*` nil
+##### [variable](d310) `reblocks-auth/providers/telegram:*bot-username*` nil
 
 Telegram bot username (without @). Required for the login widget.
 
@@ -845,78 +845,78 @@ Telegram bot username (without @). Required for the login widget.
 [062e]: https://core.telegram.org/widgets/login
 [1668]: https://github.com/40ants/reblocks-auth
 [2ba2]: https://github.com/40ants/reblocks-auth/actions
-[a19b]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/auth.lisp#L1
-[bdc1]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/auth.lisp#L8
-[57a1]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/button.lisp#L1
-[b35d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/button.lisp#L10
-[e800]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/conditions.lisp#L1
-[f712]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/conditions.lisp#L10
-[68a9]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L1
-[b9e0]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L146
-[425d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L45
-[f51a]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L49
-[c8be]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L53
-[1b2b]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L57
-[bf9d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L62
-[fe4e]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L67
-[2d70]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L71
-[6162]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/core.lisp#L82
-[7117]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/errors.lisp#L1
-[cb84]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/errors.lisp#L7
-[4162]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/github.lisp#L1
-[c511]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/github.lisp#L144
-[870d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/github.lisp#L149
-[9d31]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/github.lisp#L36
-[f860]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/github.lisp#L40
-[3e2b]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/github.lisp#L44
-[b335]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/github.lisp#L82
-[985c]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L1
-[d5a4]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L102
-[afb4]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L105
-[0ee3]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L132
-[37fd]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L136
-[491d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L145
-[d703]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L190
-[d1f5]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L196
-[33d2]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L209
-[5d4a]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L213
-[9553]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L218
-[306f]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L223
-[9e91]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L237
-[7750]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L39
-[61e8]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L40
-[dcef]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L46
-[b4c9]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L57
-[e21a]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L87
-[91ea]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/models.lisp#L96
-[c6c3]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/mailgun.lisp#L1
-[b1f7]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/mailgun.lisp#L44
-[429f]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/models.lisp#L1
-[4a09]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/models.lisp#L21
-[219f]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/models.lisp#L43
-[15c9]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/models.lisp#L44
-[bb3a]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/models.lisp#L48
-[e82d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/models.lisp#L52
-[9a6c]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/models.lisp#L78
-[3965]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L1
-[5422]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L230
-[b4e0]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L246
-[47c0]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L254
-[961d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L262
-[625c]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L50
-[5c02]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L53
-[6084]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L56
-[e899]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L59
-[148d]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L66
-[e214]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L67
-[26a5]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/processing.lisp#L69
-[0027]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/resend.lisp#L1
-[b3d9]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/resend.lisp#L16
-[c1b2]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/email/resend.lisp#L44
-[5ca6]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/telegram.lisp#L1
-[dcb8]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/telegram.lisp#L28
-[cace]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/telegram.lisp#L31
-[af99]: https://github.com/40ants/reblocks-auth/blob/6528053ed521d4ec38d082abb9bd3215eaae659d/src/providers/telegram.lisp#L64
+[0581]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/auth.lisp#L1
+[6015]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/auth.lisp#L8
+[c1b8]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/button.lisp#L1
+[b152]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/button.lisp#L10
+[edb7]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/conditions.lisp#L1
+[5529]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/conditions.lisp#L10
+[cccd]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L1
+[50d4]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L147
+[9d92]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L46
+[85b3]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L50
+[0f49]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L54
+[1784]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L58
+[0f9f]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L63
+[bb71]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L68
+[8cc5]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L72
+[e5a1]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/core.lisp#L83
+[2b66]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/errors.lisp#L1
+[1377]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/errors.lisp#L7
+[036a]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/github.lisp#L1
+[c9c4]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/github.lisp#L144
+[7ce8]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/github.lisp#L149
+[7d39]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/github.lisp#L36
+[90a6]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/github.lisp#L40
+[cb73]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/github.lisp#L44
+[fdf4]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/github.lisp#L82
+[a663]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L1
+[d1da]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L102
+[1cbc]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L105
+[d3d1]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L132
+[4dd4]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L136
+[d03f]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L145
+[c26c]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L190
+[7d3e]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L196
+[a2a8]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L209
+[2e03]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L213
+[48bc]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L218
+[04cc]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L223
+[b39f]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L237
+[8fc9]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L39
+[83c8]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L40
+[69ec]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L46
+[5a03]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L57
+[b502]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L87
+[f523]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/models.lisp#L96
+[f9eb]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/mailgun.lisp#L1
+[a6fd]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/mailgun.lisp#L44
+[b94c]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/models.lisp#L1
+[a4c8]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/models.lisp#L21
+[6cf4]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/models.lisp#L43
+[74dd]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/models.lisp#L44
+[50a1]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/models.lisp#L48
+[3dea]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/models.lisp#L52
+[11c8]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/models.lisp#L78
+[d544]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L1
+[0c01]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L230
+[9c4f]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L246
+[f07b]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L254
+[8599]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L262
+[b9e7]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L50
+[abcf]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L53
+[a975]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L56
+[94b4]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L59
+[5009]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L66
+[0718]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L67
+[c330]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/processing.lisp#L69
+[d178]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/resend.lisp#L1
+[db97]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/resend.lisp#L16
+[ffa3]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/email/resend.lisp#L44
+[af4f]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/telegram.lisp#L1
+[d310]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/telegram.lisp#L28
+[f9c9]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/telegram.lisp#L31
+[d1ac]: https://github.com/40ants/reblocks-auth/blob/91135821d9ff611fef0d1386299ce4344e85421b/src/providers/telegram.lisp#L64
 [4f85]: https://github.com/40ants/reblocks-auth/issues
 [c7c4]: https://github.com/fukamachi/mito
 [8236]: https://quickdocs.org/alexandria
